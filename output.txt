@@ -1,39 +1,39 @@
-1. Leveraging pre-trained machine learning models for islet quantification in type 1 diabetes 
- Authors: LAMB, Damon G 
- Departments: University of Florida, Psychiatry, College of Medicine
+1. Language Proficiency, Second Language Educational Experience, and Psychological Well-being Among International Students at U.S. Universities 
+ Authors: BRUNSTING, Nelson C 
+ Departments: University of Florida, College of Education, Special Education
 
-2. Adjusting regression models for conditional uncertainty calibration 
- Authors: YIN, Mingzhang 
- Departments: University of Florida, Warrington College of Business, Marketing
+2. The Master Adaptive Clinician Educator: A Framework for Future Educational Leaders in Academic Medicine 
+ Authors: SOTTILE, Elisa 
+ Departments: University of Florida, Medicine-Jacksonville, College of Medicine - Jacksonville
 
-3. Data science and automation in the process of theorizing: Machine learning’s power of induction in the co-duction cycle 
- Authors: LEE, Gwendolyn K 
- Departments: University of Florida, Warrington College of Business, Management
+3. Science Outcome Design Parameters for Cluster-Randomized Trials Involving Teachers 
+ Authors: BRATSCH-HINES, Mary, POEKERT, Philip E 
+ Departments: University of Florida, College of Education, Lastinger Center
 
-4. Machine learning-optimized non-invasive brain stimulation and treatment response classification for major depression 
- Authors: QUEEN, Aprinda I 
- Departments: University of Florida, College of Public Health and Health Professions, Clinical / Health Psychology
+4. What Are the Side Effects of School Turnaround? A Systematic Review 
+ Authors: REDDING, Christopher H 
+ Departments: University of Florida, College of Education, Human Development and Organizational Studies
 
-5. IDEEA: information diffusion model for integrating gene expression and EEG data in identifying Alzheimer’s disease markers 
- Authors: KAHVECI, Tamer 
- Departments: University of Florida, Herbert Wertheim College of Engineering, Computer / Information Science & Engineering
+5. Examining two different models for developing teachers new to computer science: lessons from a CS4All district 
+ Authors: ISRAEL, Maya 
+ Departments: University of Florida, College of Education, School of Teaching and Learning
 
-6. Classification of Citrus Leaf Diseases Using Hyperspectral Reflectance and Fluorescence Imaging and Machine Learning Techniques 
- Authors: DEWDNEY, Megan M, BURKS, Thomas F 
- Departments: University of Florida, Agricultural and Biological Engineering, Citrus Research and Education Center - Lake Alfred, College of Agricultural and Life Sciences
+6. What Does JPER Look for? 
+ Authors: HU, Lingqian 
+ Departments: University of Florida, Urban and Regional Planning, College of Design, Construction and Planning
 
-7. Design and development of a machine-learning-driven opioid overdose risk prediction tool integrated in electronic health records in primary care settings 
- Authors: NELSON, Danielle S, BIAN, Jiang, NGUYEN, Khoa A, STARAS, Stephanie AS, HE, Xing, WU, Yonghui, ROSENBERG, Eric I, SCHMIDT, Siegfried O, WILSON, Debbie L 
- Departments: University of Florida, Pharmaceutical Outcomes & Policy, Pharmacotherapy and Translational Research, Community Health / Family Medicine, Health Outcomes & Biomedical Informatics, Medicine, College of Medicine, College of Pharmacy
+7. Navigating Tensions in the Design of a New Equity Centered Elementary Teacher Preparation Program 
+ Authors: MUNDORF, Jonathan P, VETERE, Timothy M, CHAPMAN, Suzanne 
+ Departments: University of Florida, College of Education, P.K. Yonge Developmental Research School, School of Teaching and Learning
 
-8. Haves and have-nots: socioeconomic position improves accuracy of machine learning algorithms for predicting high-impact chronic pain. 
- Authors: BARTLEY, Emily J 
- Departments: University of Florida, College of Dentistry, Community Based Programs
+8. Entering the agricultural education professorate: Hiring authorities’ perceptions of tenure-track faculty needs 
+ Authors: MYERS, Brian E 
+ Departments: University of Florida, Agricultural Education and Communication, College of Agricultural and Life Sciences
 
-9. Decoding Missense Variants by Incorporating Phase Separation via Machine Learning 
- Authors: LU, Qing T 
- Departments: University of Florida, Biostatistics, Public Health and Health Professions - Medicine Integrated Programs
+9. Promoting Inclusive Visits to a Natural History Museum with a Pre-Visit VR Tour for Autistic Families 
+ Authors: CRIPPEN, Kent J, NEWBUTT, Nigel A 
+ Departments: University of Florida, College of Education, School of Teaching and Learning
 
-10. Identifying Potential Factors Associated With Racial Disparities in COVID-19 Outcomes: Retrospective Cohort Study Using Machine Learning on Real-World Data 
- Authors: KIMMEL, Stephen, LAUBENBACHER, Reinhard C 
- Departments: University of Florida, Epidemiology, Medicine, Public Health and Health Professions - Medicine Integrated Programs, College of Medicine
+10. Meta-Analysis of the Effect of Technology-Based Mathematical Fact Practice on Mathematics Outcomes 
+ Authors: BURNS, Matthew K 
+ Departments: University of Florida, College of Education, Special Education

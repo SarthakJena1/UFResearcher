@@ -2,14 +2,14 @@
   "meta": {
     "query": {
       "key": "078fc03a4fca4bbfb9b852bdf080234d",
-      "digest": "e7a2acd472085dc14f0039f24e112d8d70c1e12f",
+      "digest": "0a79e14625b97958bf66acc4663fb6e384c9bbf9",
       "page": {
         "number": 1,
         "size": 10
       },
       "filter": {
         "order": "publication_date",
-        "q": "machine learning",
+        "q": "education",
         "scope": "institution",
         "timeframe": "3m",
         "type": [
@@ -19,26 +19,26 @@
     },
     "response": {
       "status": "ok",
-      "description": "Articles from University of Florida sorted by publication date with keywords containing machine learning mentioned in the past three months",
-      "total-results": 30,
-      "total-pages": 3
+      "description": "Articles from University of Florida sorted by publication date with keywords containing education mentioned in the past three months",
+      "total-results": 63,
+      "total-pages": 7
     }
   },
   "links": {
-    "self": "https://www.altmetric.com/explorer/api/research_outputs?digest=e7a2acd472085dc14f0039f24e112d8d70c1e12f&filter%5Border%5D=publication_date&filter%5Bq%5D=machine+learning&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=1&page%5Bsize%5D=10",
-    "first": "https://www.altmetric.com/explorer/api/research_outputs?digest=e7a2acd472085dc14f0039f24e112d8d70c1e12f&filter%5Border%5D=publication_date&filter%5Bq%5D=machine+learning&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=1&page%5Bsize%5D=10",
-    "last": "https://www.altmetric.com/explorer/api/research_outputs?digest=e7a2acd472085dc14f0039f24e112d8d70c1e12f&filter%5Border%5D=publication_date&filter%5Bq%5D=machine+learning&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=3&page%5Bsize%5D=10",
-    "next": "https://www.altmetric.com/explorer/api/research_outputs?digest=e7a2acd472085dc14f0039f24e112d8d70c1e12f&filter%5Border%5D=publication_date&filter%5Bq%5D=machine+learning&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=2&page%5Bsize%5D=10"
+    "self": "https://www.altmetric.com/explorer/api/research_outputs?digest=0a79e14625b97958bf66acc4663fb6e384c9bbf9&filter%5Border%5D=publication_date&filter%5Bq%5D=education&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "first": "https://www.altmetric.com/explorer/api/research_outputs?digest=0a79e14625b97958bf66acc4663fb6e384c9bbf9&filter%5Border%5D=publication_date&filter%5Bq%5D=education&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "https://www.altmetric.com/explorer/api/research_outputs?digest=0a79e14625b97958bf66acc4663fb6e384c9bbf9&filter%5Border%5D=publication_date&filter%5Bq%5D=education&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=7&page%5Bsize%5D=10",
+    "next": "https://www.altmetric.com/explorer/api/research_outputs?digest=0a79e14625b97958bf66acc4663fb6e384c9bbf9&filter%5Border%5D=publication_date&filter%5Bq%5D=education&filter%5Bscope%5D=institution&filter%5Btimeframe%5D=3m&filter%5Btype%5D%5B%5D=article&key=078fc03a4fca4bbfb9b852bdf080234d&page%5Bnumber%5D=2&page%5Bsize%5D=10"
   },
   "data": [
     {
-      "id": 170347512,
+      "id": 171791040,
       "type": "research-output",
       "attributes": {
-        "title": "Leveraging pre-trained machine learning models for islet quantification in type 1 diabetes",
+        "title": "Language Proficiency, Second Language Educational Experience, and Psychological Well-being Among International Students at U.S. Universities",
         "identifiers": {
           "dois": [
-            "10.1016/j.jpi.2024.100406"
+            "10.1007/s11162-024-09821-7"
           ]
         },
         "readers": {
@@ -48,348 +48,36 @@
           "citations": 0
         },
         "mentions": {
-          "tweet": 1
-        },
-        "altmetric-score": 1,
-        "output-type": "article",
-        "historical-mentions": {
-          "1d": 0,
-          "3d": 0,
-          "1w": 0,
-          "1m": 0,
-          "3m": 1,
-          "6m": 1,
-          "1y": 1,
-          "at": 1
-        },
-        "publication-date": "2025-01-01",
-        "badge-url": "https://api.altmetric.com/v1/donut/170347512_240.png",
-        "oa-status": true,
-        "oa-type": "gold",
-        "institution": {
-          "verified": true
-        }
-      },
-      "relationships": {
-        "journal": {
-          "id": "4f6fa52c3cf058f610004095",
-          "type": "journal"
-        },
-        "institutional-authors": [
-          {
-            "id": "univflorida:person:942",
-            "type": "author"
-          }
-        ],
-        "institutional-departments": [
-          {
-            "id": "univflorida:group:1",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:197",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:5",
-            "type": "department"
-          }
-        ],
-        "affiliations": [
-          {
-            "id": "grid.15276.37",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.413737.5",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.451133.1",
-            "type": "grid-affiliation"
-          }
-        ],
-        "fields-of-research": [
-          {
-            "id": "46",
-            "type": "field-of-research"
-          },
-          {
-            "id": "4612",
-            "type": "field-of-research"
-          }
-        ],
-        "funders": [
-          {
-            "id": "grid.419635.c",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.429307.b",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.451133.1",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.453268.e",
-            "type": "grid-funder"
-          }
-        ]
-      }
-    },
-    {
-      "id": 170321312,
-      "type": "research-output",
-      "attributes": {
-        "title": "Adjusting regression models for conditional uncertainty calibration",
-        "identifiers": {
-          "dois": [
-            "10.1007/s10994-024-06627-7"
-          ]
-        },
-        "readers": {
-          "mendeley": 3
-        },
-        "dimensions": {
-          "citations": 0
-        },
-        "mentions": {
-          "tweet": 1
-        },
-        "altmetric-score": 1,
-        "output-type": "article",
-        "historical-mentions": {
-          "1d": 0,
-          "3d": 0,
-          "1w": 0,
-          "1m": 0,
-          "3m": 1,
-          "6m": 1,
-          "1y": 1,
-          "at": 1
-        },
-        "publication-date": "2024-11-11",
-        "badge-url": "https://api.altmetric.com/v1/donut/170321312_240.png",
-        "oa-status": false,
-        "oa-type": "closed",
-        "institution": {
-          "verified": true
-        }
-      },
-      "relationships": {
-        "journal": {
-          "id": "4f6fa4cf3cf058f610000665",
-          "type": "journal"
-        },
-        "institutional-authors": [
-          {
-            "id": "univflorida:person:2470",
-            "type": "author"
-          }
-        ],
-        "institutional-departments": [
-          {
-            "id": "univflorida:group:1",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:10",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:230",
-            "type": "department"
-          }
-        ],
-        "affiliations": [
-          {
-            "id": "grid.15276.37",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.267323.1",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.497062.e",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.5386.8",
-            "type": "grid-affiliation"
-          }
-        ],
-        "fields-of-research": [
-          {
-            "id": "46",
-            "type": "field-of-research"
-          },
-          {
-            "id": "4611",
-            "type": "field-of-research"
-          }
-        ]
-      }
-    },
-    {
-      "id": 170085427,
-      "type": "research-output",
-      "attributes": {
-        "title": "Data science and automation in the process of theorizing: Machine learning’s power of induction in the co-duction cycle",
-        "identifiers": {
-          "dois": [
-            "10.1371/journal.pone.0309318"
-          ],
-          "pubmed-ids": [
-            "39495739"
-          ],
-          "pmc-ids": [
-            "PMC11534228"
-          ]
-        },
-        "readers": {
-          "mendeley": 2
-        },
-        "dimensions": {
-          "citations": 0
-        },
-        "mentions": {
-          "tweet": 6
-        },
-        "altmetric-score": 5,
-        "output-type": "article",
-        "historical-mentions": {
-          "1d": 0,
-          "3d": 0,
-          "1w": 0,
-          "1m": 0,
-          "3m": 6,
-          "6m": 6,
-          "1y": 6,
-          "at": 6
-        },
-        "publication-date": "2024-11-04",
-        "badge-url": "https://api.altmetric.com/v1/donut/170085427_240.png",
-        "oa-status": true,
-        "oa-type": "gold",
-        "institution": {
-          "verified": true
-        }
-      },
-      "relationships": {
-        "journal": {
-          "id": "4f6fa5313cf058f6100043e3",
-          "type": "journal"
-        },
-        "institutional-authors": [
-          {
-            "id": "univflorida:person:4363",
-            "type": "author"
-          }
-        ],
-        "institutional-departments": [
-          {
-            "id": "univflorida:group:1",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:10",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:227",
-            "type": "department"
-          }
-        ],
-        "affiliations": [
-          {
-            "id": "grid.12380.38",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.15276.37",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.509589.8",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.517896.4",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.5477.1",
-            "type": "grid-affiliation"
-          }
-        ],
-        "fields-of-research": [
-          {
-            "id": "46",
-            "type": "field-of-research"
-          },
-          {
-            "id": "4611",
-            "type": "field-of-research"
-          }
-        ]
-      }
-    },
-    {
-      "id": 169832333,
-      "type": "research-output",
-      "attributes": {
-        "title": "Machine learning-optimized non-invasive brain stimulation and treatment response classification for major depression",
-        "identifiers": {
-          "dois": [
-            "10.1186/s42234-024-00157-2"
-          ],
-          "pubmed-ids": [
-            "39473014"
-          ],
-          "pmc-ids": [
-            "PMC11524011"
-          ]
-        },
-        "readers": {
-          "mendeley": 3
-        },
-        "dimensions": {
-          "citations": 0
-        },
-        "mentions": {
           "tweet": 2
         },
-        "altmetric-score": 1,
+        "altmetric-score": 3,
         "output-type": "article",
         "historical-mentions": {
           "1d": 0,
           "3d": 0,
-          "1w": 1,
-          "1m": 1,
-          "3m": 2,
-          "6m": 2,
-          "1y": 2,
-          "at": 2
+          "1w": 3,
+          "1m": 3,
+          "3m": 3,
+          "6m": 3,
+          "1y": 3,
+          "at": 3
         },
-        "publication-date": "2024-10-30",
-        "badge-url": "https://api.altmetric.com/v1/donut/169832333_240.png",
+        "publication-date": "2024-11-23",
+        "badge-url": "https://api.altmetric.com/v1/donut/171791040_240.png",
         "oa-status": true,
-        "oa-type": "gold",
+        "oa-type": "hybrid",
         "institution": {
           "verified": true
         }
       },
       "relationships": {
         "journal": {
-          "id": "5acc7fbf7ac79e305d0c1a53",
+          "id": "4f6fa5133cf058f610003467",
           "type": "journal"
         },
         "institutional-authors": [
           {
-            "id": "univflorida:person:115",
+            "id": "univflorida:person:6019",
             "type": "author"
           }
         ],
@@ -399,21 +87,152 @@
             "type": "department"
           },
           {
-            "id": "univflorida:group:11",
+            "id": "univflorida:group:17",
             "type": "department"
           },
           {
-            "id": "univflorida:group:161",
+            "id": "univflorida:group:277",
             "type": "department"
           }
         ],
         "affiliations": [
           {
-            "id": "grid.11899.38",
+            "id": "grid.15276.37",
             "type": "grid-affiliation"
           },
           {
+            "id": "grid.241167.7",
+            "type": "grid-affiliation"
+          }
+        ],
+        "fields-of-research": [
+          {
+            "id": "39",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3904",
+            "type": "field-of-research"
+          }
+        ],
+        "sustainable-development-goals": [
+          {
+            "id": "4",
+            "type": "sustainable-development-goal"
+          }
+        ]
+      }
+    },
+    {
+      "id": 171353618,
+      "type": "research-output",
+      "attributes": {
+        "title": "The Master Adaptive Clinician Educator: A Framework for Future Educational Leaders in Academic Medicine",
+        "identifiers": {
+          "dois": [
+            "10.1007/s11606-024-09199-3"
+          ],
+          "pubmed-ids": [
+            "39567426"
+          ]
+        },
+        "readers": {
+          "mendeley": 0
+        },
+        "dimensions": {
+          "citations": 0
+        },
+        "mentions": {
+          "tweet": 1
+        },
+        "altmetric-score": 1,
+        "output-type": "article",
+        "historical-mentions": {
+          "1d": 0,
+          "3d": 1,
+          "1w": 1,
+          "1m": 1,
+          "3m": 1,
+          "6m": 1,
+          "1y": 1,
+          "at": 1
+        },
+        "publication-date": "2024-11-20",
+        "badge-url": "https://api.altmetric.com/v1/donut/171353618_240.png",
+        "oa-status": true,
+        "oa-type": "hybrid",
+        "institution": {
+          "verified": true
+        }
+      },
+      "relationships": {
+        "journal": {
+          "id": "4f6fa4ee3cf058f610002c43",
+          "type": "journal"
+        },
+        "institutional-authors": [
+          {
+            "id": "univflorida:person:4286",
+            "type": "author"
+          }
+        ],
+        "institutional-departments": [
+          {
+            "id": "univflorida:group:1",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:138",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:6",
+            "type": "department"
+          }
+        ],
+        "affiliations": [
+          {
             "id": "grid.15276.37",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.170205.1",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.189967.8",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.239424.a",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.27755.32",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.34477.33",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.412689.0",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.415895.4",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.416233.1",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.67033.31",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.67105.35",
             "type": "grid-affiliation"
           }
         ],
@@ -427,76 +246,40 @@
             "type": "field-of-research"
           },
           {
-            "id": "39",
+            "id": "42",
             "type": "field-of-research"
           },
           {
-            "id": "3904",
+            "id": "4203",
             "type": "field-of-research"
           },
           {
-            "id": "51",
-            "type": "field-of-research"
-          },
-          {
-            "id": "52",
-            "type": "field-of-research"
-          },
-          {
-            "id": "5202",
+            "id": "4206",
             "type": "field-of-research"
           }
         ],
         "funders": [
           {
-            "id": "grid.419475.a",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.427710.7",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.450640.3",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.451133.1",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.452907.d",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.454766.2",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.457799.1",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.478996.d",
+            "id": "grid.422332.6",
             "type": "grid-funder"
           }
         ],
         "sustainable-development-goals": [
           {
-            "id": "3",
+            "id": "4",
             "type": "sustainable-development-goal"
           }
         ]
       }
     },
     {
-      "id": 169509921,
+      "id": 170331267,
       "type": "research-output",
       "attributes": {
-        "title": "IDEEA: information diffusion model for integrating gene expression and EEG data in identifying Alzheimer’s disease markers",
+        "title": "Science Outcome Design Parameters for Cluster-Randomized Trials Involving Teachers",
         "identifiers": {
           "dois": [
-            "10.1088/2632-2153/ad829d"
+            "10.1080/19345747.2024.2417283"
           ]
         },
         "readers": {
@@ -520,22 +303,26 @@
           "1y": 2,
           "at": 2
         },
-        "publication-date": "2024-10-25",
-        "badge-url": "https://api.altmetric.com/v1/donut/169509921_240.png",
-        "oa-status": true,
-        "oa-type": "gold",
+        "publication-date": "2024-11-12",
+        "badge-url": "https://api.altmetric.com/v1/donut/170331267_240.png",
+        "oa-status": false,
+        "oa-type": "closed",
         "institution": {
           "verified": true
         }
       },
       "relationships": {
         "journal": {
-          "id": "5e5e7c54ea70b400091b8e76",
+          "id": "4f6fa4da3cf058f61000159d",
           "type": "journal"
         },
         "institutional-authors": [
           {
-            "id": "univflorida:person:5072",
+            "id": "univflorida:person:2403",
+            "type": "author"
+          },
+          {
+            "id": "univflorida:person:5330",
             "type": "author"
           }
         ],
@@ -545,11 +332,11 @@
             "type": "department"
           },
           {
-            "id": "univflorida:group:13",
+            "id": "univflorida:group:17",
             "type": "department"
           },
           {
-            "id": "univflorida:group:293",
+            "id": "univflorida:group:272",
             "type": "department"
           }
         ],
@@ -559,48 +346,427 @@
             "type": "grid-affiliation"
           },
           {
-            "id": "grid.38575.3c",
+            "id": "grid.213876.9",
             "type": "grid-affiliation"
           },
           {
-            "id": "grid.488643.5",
+            "id": "grid.266515.3",
             "type": "grid-affiliation"
           }
         ],
         "fields-of-research": [
           {
-            "id": "46",
+            "id": "49",
             "type": "field-of-research"
           },
           {
-            "id": "4601",
+            "id": "4905",
             "type": "field-of-research"
-          },
-          {
-            "id": "4611",
-            "type": "field-of-research"
-          }
-        ],
-        "funders": [
-          {
-            "id": "grid.457785.c",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.457793.b",
-            "type": "grid-funder"
           }
         ]
       }
     },
     {
-      "id": 169553185,
+      "id": 169757082,
       "type": "research-output",
       "attributes": {
-        "title": "Classification of Citrus Leaf Diseases Using Hyperspectral Reflectance and Fluorescence Imaging and Machine Learning Techniques",
+        "title": "What Are the Side Effects of School Turnaround? A Systematic Review",
         "identifiers": {
           "dois": [
-            "10.3390/horticulturae10111124"
+            "10.3102/0091732x241248151"
+          ]
+        },
+        "readers": {
+          "mendeley": 0
+        },
+        "dimensions": {
+          "citations": 1
+        },
+        "mentions": {
+          "tweet": 13
+        },
+        "altmetric-score": 7,
+        "output-type": "article",
+        "historical-mentions": {
+          "1d": 0,
+          "3d": 0,
+          "1w": 0,
+          "1m": 0,
+          "3m": 14,
+          "6m": 14,
+          "1y": 14,
+          "at": 14
+        },
+        "publication-date": "2024-10-28",
+        "badge-url": "https://api.altmetric.com/v1/donut/169757082_240.png",
+        "oa-status": false,
+        "oa-type": "closed",
+        "institution": {
+          "verified": true
+        }
+      },
+      "relationships": {
+        "journal": {
+          "id": "4f6fa6363cf058f610008778",
+          "type": "journal"
+        },
+        "institutional-authors": [
+          {
+            "id": "univflorida:person:710",
+            "type": "author"
+          }
+        ],
+        "institutional-departments": [
+          {
+            "id": "univflorida:group:1",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:17",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:275",
+            "type": "department"
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "grid.15276.37",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.255986.5",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.40803.3f",
+            "type": "grid-affiliation"
+          }
+        ],
+        "fields-of-research": [
+          {
+            "id": "39",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3902",
+            "type": "field-of-research"
+          }
+        ]
+      }
+    },
+    {
+      "id": 169671888,
+      "type": "research-output",
+      "attributes": {
+        "title": "Examining two different models for developing teachers new to computer science: lessons from a CS4All district",
+        "identifiers": {
+          "dois": [
+            "10.1080/15391523.2024.2410183"
+          ]
+        },
+        "readers": {
+          "mendeley": 0
+        },
+        "dimensions": {
+          "citations": 1
+        },
+        "mentions": {
+          "tweet": 4
+        },
+        "altmetric-score": 4,
+        "output-type": "article",
+        "historical-mentions": {
+          "1d": 0,
+          "3d": 0,
+          "1w": 0,
+          "1m": 0,
+          "3m": 4,
+          "6m": 4,
+          "1y": 4,
+          "at": 4
+        },
+        "publication-date": "2024-10-24",
+        "badge-url": "https://api.altmetric.com/v1/donut/169671888_240.png",
+        "oa-status": false,
+        "oa-type": "closed",
+        "institution": {
+          "verified": true
+        }
+      },
+      "relationships": {
+        "journal": {
+          "id": "4f6fa4f63cf058f610002f0a",
+          "type": "journal"
+        },
+        "institutional-authors": [
+          {
+            "id": "univflorida:person:5724",
+            "type": "author"
+          }
+        ],
+        "institutional-departments": [
+          {
+            "id": "univflorida:group:1",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:17",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:279",
+            "type": "department"
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "grid.137628.9",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.15276.37",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.280743.a",
+            "type": "grid-affiliation"
+          }
+        ],
+        "fields-of-research": [
+          {
+            "id": "39",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3901",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3903",
+            "type": "field-of-research"
+          }
+        ],
+        "sustainable-development-goals": [
+          {
+            "id": "4",
+            "type": "sustainable-development-goal"
+          }
+        ]
+      }
+    },
+    {
+      "id": 169623674,
+      "type": "research-output",
+      "attributes": {
+        "title": "What Does JPER Look for?",
+        "identifiers": {
+          "dois": [
+            "10.1177/0739456x241290489"
+          ]
+        },
+        "readers": {
+          "mendeley": 0
+        },
+        "dimensions": {
+          "citations": 0
+        },
+        "mentions": {
+          "blog": 1,
+          "tweet": 5
+        },
+        "altmetric-score": 10,
+        "output-type": "article",
+        "historical-mentions": {
+          "1d": 0,
+          "3d": 0,
+          "1w": 0,
+          "1m": 0,
+          "3m": 6,
+          "6m": 6,
+          "1y": 6,
+          "at": 6
+        },
+        "publication-date": "2024-10-18",
+        "badge-url": "https://api.altmetric.com/v1/donut/169623674_240.png",
+        "oa-status": false,
+        "oa-type": "closed",
+        "institution": {
+          "verified": true
+        }
+      },
+      "relationships": {
+        "journal": {
+          "id": "4f6fa6053cf058f610006658",
+          "type": "journal"
+        },
+        "institutional-authors": [
+          {
+            "id": "univflorida:person:2196",
+            "type": "author"
+          }
+        ],
+        "institutional-departments": [
+          {
+            "id": "univflorida:group:1",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:267",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:7",
+            "type": "department"
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "grid.15276.37",
+            "type": "grid-affiliation"
+          },
+          {
+            "id": "grid.429997.8",
+            "type": "grid-affiliation"
+          }
+        ],
+        "fields-of-research": [
+          {
+            "id": "33",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3304",
+            "type": "field-of-research"
+          },
+          {
+            "id": "39",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3901",
+            "type": "field-of-research"
+          }
+        ]
+      }
+    },
+    {
+      "id": 169527609,
+      "type": "research-output",
+      "attributes": {
+        "title": "Navigating Tensions in the Design of a New Equity Centered Elementary Teacher Preparation Program",
+        "identifiers": {
+          "dois": [
+            "10.1080/1547688x.2024.2411156"
+          ]
+        },
+        "readers": {
+          "mendeley": 0
+        },
+        "dimensions": {
+          "citations": 0
+        },
+        "mentions": {
+          "tweet": 2
+        },
+        "altmetric-score": 2,
+        "output-type": "article",
+        "historical-mentions": {
+          "1d": 0,
+          "3d": 0,
+          "1w": 0,
+          "1m": 0,
+          "3m": 2,
+          "6m": 2,
+          "1y": 2,
+          "at": 2
+        },
+        "publication-date": "2024-10-13",
+        "badge-url": "https://api.altmetric.com/v1/donut/169527609_240.png",
+        "oa-status": false,
+        "oa-type": "closed",
+        "institution": {
+          "verified": true
+        }
+      },
+      "relationships": {
+        "journal": {
+          "id": "4f6fa4d83cf058f610001391",
+          "type": "journal"
+        },
+        "institutional-authors": [
+          {
+            "id": "univflorida:person:1881",
+            "type": "author"
+          },
+          {
+            "id": "univflorida:person:3717",
+            "type": "author"
+          },
+          {
+            "id": "univflorida:person:5540",
+            "type": "author"
+          }
+        ],
+        "institutional-departments": [
+          {
+            "id": "univflorida:group:1",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:17",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:274",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:279",
+            "type": "department"
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "grid.15276.37",
+            "type": "grid-affiliation"
+          }
+        ],
+        "fields-of-research": [
+          {
+            "id": "39",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3901",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3902",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3903",
+            "type": "field-of-research"
+          }
+        ],
+        "sustainable-development-goals": [
+          {
+            "id": "10",
+            "type": "sustainable-development-goal"
+          }
+        ]
+      }
+    },
+    {
+      "id": 169509823,
+      "type": "research-output",
+      "attributes": {
+        "title": "Entering the agricultural education professorate: Hiring authorities’ perceptions of tenure-track faculty needs",
+        "identifiers": {
+          "dois": [
+            "10.37433/aad.v5i4.517"
           ]
         },
         "readers": {
@@ -624,8 +790,8 @@
           "1y": 2,
           "at": 2
         },
-        "publication-date": "2024-10-22",
-        "badge-url": "https://api.altmetric.com/v1/donut/169553185_240.png",
+        "publication-date": "2024-10-11",
+        "badge-url": "https://api.altmetric.com/v1/donut/169509823_240.png",
         "oa-status": true,
         "oa-type": "gold",
         "institution": {
@@ -634,16 +800,12 @@
       },
       "relationships": {
         "journal": {
-          "id": "60a677e2184e650013360fde",
+          "id": "6655ab45d714020001ac8311",
           "type": "journal"
         },
         "institutional-authors": [
           {
-            "id": "univflorida:person:2695",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:5089",
+            "id": "univflorida:person:4113",
             "type": "author"
           }
         ],
@@ -653,11 +815,7 @@
             "type": "department"
           },
           {
-            "id": "univflorida:group:34",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:39",
+            "id": "univflorida:group:33",
             "type": "department"
           },
           {
@@ -671,36 +829,30 @@
             "type": "grid-affiliation"
           },
           {
-            "id": "grid.263791.8",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.507312.2",
+            "id": "grid.65519.3e",
             "type": "grid-affiliation"
           }
         ],
         "fields-of-research": [
           {
-            "id": "30",
+            "id": "39",
+            "type": "field-of-research"
+          },
+          {
+            "id": "3903",
             "type": "field-of-research"
           }
         ]
       }
     },
     {
-      "id": 169444529,
+      "id": 169173237,
       "type": "research-output",
       "attributes": {
-        "title": "Design and development of a machine-learning-driven opioid overdose risk prediction tool integrated in electronic health records in primary care settings",
+        "title": "Promoting Inclusive Visits to a Natural History Museum with a Pre-Visit VR Tour for Autistic Families",
         "identifiers": {
           "dois": [
-            "10.1186/s42234-024-00156-3"
-          ],
-          "pubmed-ids": [
-            "39420438"
-          ],
-          "pmc-ids": [
-            "PMC11488086"
+            "10.1007/s11165-024-10207-z"
           ]
         },
         "readers": {
@@ -710,68 +862,40 @@
           "citations": 0
         },
         "mentions": {
-          "tweet": 4
+          "tweet": 2
         },
-        "altmetric-score": 5,
+        "altmetric-score": 2,
         "output-type": "article",
         "historical-mentions": {
           "1d": 0,
           "3d": 0,
           "1w": 0,
-          "1m": 3,
-          "3m": 7,
-          "6m": 7,
-          "1y": 7,
-          "at": 7
+          "1m": 0,
+          "3m": 2,
+          "6m": 2,
+          "1y": 2,
+          "at": 2
         },
-        "publication-date": "2024-10-18",
-        "badge-url": "https://api.altmetric.com/v1/donut/169444529_240.png",
-        "oa-status": true,
-        "oa-type": "gold",
+        "publication-date": "2024-10-10",
+        "badge-url": "https://api.altmetric.com/v1/donut/169173237_240.png",
+        "oa-status": false,
+        "oa-type": "closed",
         "institution": {
           "verified": true
         }
       },
       "relationships": {
         "journal": {
-          "id": "5acc7fbf7ac79e305d0c1a53",
+          "id": "4f6fa6023cf058f6100063d2",
           "type": "journal"
         },
         "institutional-authors": [
           {
-            "id": "univflorida:person:1006",
+            "id": "univflorida:person:2067",
             "type": "author"
           },
           {
-            "id": "univflorida:person:1532",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:2015",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:3428",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:3883",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:3930",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:4300",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:5050",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:5440",
+            "id": "univflorida:person:6434",
             "type": "author"
           }
         ],
@@ -781,31 +905,11 @@
             "type": "department"
           },
           {
-            "id": "univflorida:group:125",
+            "id": "univflorida:group:17",
             "type": "department"
           },
           {
-            "id": "univflorida:group:129",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:179",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:182",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:183",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:5",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:8",
+            "id": "univflorida:group:279",
             "type": "department"
           }
         ],
@@ -813,37 +917,97 @@
           {
             "id": "grid.15276.37",
             "type": "grid-affiliation"
+          }
+        ],
+        "fields-of-research": [
+          {
+            "id": "39",
+            "type": "field-of-research"
           },
           {
-            "id": "grid.21925.3d",
+            "id": "3901",
+            "type": "field-of-research"
+          }
+        ]
+      }
+    },
+    {
+      "id": 169509178,
+      "type": "research-output",
+      "attributes": {
+        "title": "Meta-Analysis of the Effect of Technology-Based Mathematical Fact Practice on Mathematics Outcomes",
+        "identifiers": {
+          "dois": [
+            "10.1177/01626434241288199"
+          ]
+        },
+        "readers": {
+          "mendeley": 0
+        },
+        "dimensions": {
+          "citations": 0
+        },
+        "mentions": {},
+        "altmetric-score": 1,
+        "output-type": "article",
+        "historical-mentions": {
+          "1d": 0,
+          "3d": 0,
+          "1w": 0,
+          "1m": 1,
+          "3m": 1,
+          "6m": 1,
+          "1y": 1,
+          "at": 1
+        },
+        "publication-date": "2024-10-09",
+        "badge-url": "https://api.altmetric.com/v1/donut/169509178_240.png",
+        "oa-status": false,
+        "oa-type": "closed",
+        "institution": {
+          "verified": true
+        }
+      },
+      "relationships": {
+        "journal": {
+          "id": "4f6fa6013cf058f6100062ee",
+          "type": "journal"
+        },
+        "institutional-authors": [
+          {
+            "id": "univflorida:person:6022",
+            "type": "author"
+          }
+        ],
+        "institutional-departments": [
+          {
+            "id": "univflorida:group:1",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:17",
+            "type": "department"
+          },
+          {
+            "id": "univflorida:group:277",
+            "type": "department"
+          }
+        ],
+        "affiliations": [
+          {
+            "id": "grid.134936.a",
             "type": "grid-affiliation"
           },
           {
-            "id": "grid.223827.e",
+            "id": "grid.15276.37",
             "type": "grid-affiliation"
           },
           {
-            "id": "grid.257413.6",
+            "id": "grid.266757.7",
             "type": "grid-affiliation"
           },
           {
-            "id": "grid.413935.9",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.418356.d",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.429684.5",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.448342.d",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.504136.5",
+            "id": "grid.89336.37",
             "type": "grid-affiliation"
           }
         ],
@@ -855,376 +1019,12 @@
           {
             "id": "4203",
             "type": "field-of-research"
-          },
-          {
-            "id": "46",
-            "type": "field-of-research"
-          },
-          {
-            "id": "4609",
-            "type": "field-of-research"
-          }
-        ],
-        "funders": [
-          {
-            "id": "grid.420090.f",
-            "type": "grid-funder"
-          }
-        ]
-      }
-    },
-    {
-      "id": 169245536,
-      "type": "research-output",
-      "attributes": {
-        "title": "Haves and have-nots: socioeconomic position improves accuracy of machine learning algorithms for predicting high-impact chronic pain.",
-        "identifiers": {
-          "dois": [
-            "10.1097/j.pain.0000000000003451"
-          ],
-          "pubmed-ids": [
-            "39451017"
-          ]
-        },
-        "readers": {
-          "mendeley": 4
-        },
-        "dimensions": {
-          "citations": 0
-        },
-        "mentions": {
-          "blog": 1,
-          "msm": 1,
-          "tweet": 9
-        },
-        "altmetric-score": 21,
-        "output-type": "article",
-        "historical-mentions": {
-          "1d": 0,
-          "3d": 0,
-          "1w": 0,
-          "1m": 0,
-          "3m": 11,
-          "6m": 11,
-          "1y": 11,
-          "at": 11
-        },
-        "publication-date": "2024-10-11",
-        "badge-url": "https://api.altmetric.com/v1/donut/169245536_240.png",
-        "oa-status": false,
-        "oa-type": "closed",
-        "institution": {
-          "verified": true
-        }
-      },
-      "relationships": {
-        "journal": {
-          "id": "4f6fa5113cf058f610003281",
-          "type": "journal"
-        },
-        "institutional-authors": [
-          {
-            "id": "univflorida:person:1115",
-            "type": "author"
-          }
-        ],
-        "institutional-departments": [
-          {
-            "id": "univflorida:group:1",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:14",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:241",
-            "type": "department"
-          }
-        ],
-        "affiliations": [
-          {
-            "id": "grid.152326.1",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.15276.37",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.19006.3e",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.261037.1",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.266869.5",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.410721.1",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.412807.8",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.4367.6",
-            "type": "grid-affiliation"
-          }
-        ],
-        "fields-of-research": [
-          {
-            "id": "32",
-            "type": "field-of-research"
-          },
-          {
-            "id": "3202",
-            "type": "field-of-research"
-          },
-          {
-            "id": "42",
-            "type": "field-of-research"
-          }
-        ],
-        "funders": [
-          {
-            "id": "grid.281076.a",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.416868.5",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.420090.f",
-            "type": "grid-funder"
           }
         ],
         "sustainable-development-goals": [
           {
-            "id": "10",
+            "id": "4",
             "type": "sustainable-development-goal"
-          }
-        ]
-      }
-    },
-    {
-      "id": 168591363,
-      "type": "research-output",
-      "attributes": {
-        "title": "Decoding Missense Variants by Incorporating Phase Separation via Machine Learning",
-        "identifiers": {
-          "dois": [
-            "10.1038/s41467-024-52580-3"
-          ],
-          "pubmed-ids": [
-            "39333476"
-          ],
-          "pmc-ids": [
-            "PMC11436885"
-          ]
-        },
-        "readers": {
-          "mendeley": 0
-        },
-        "dimensions": {
-          "citations": 0
-        },
-        "mentions": {
-          "msm": 1,
-          "rdt": 1,
-          "tweet": 1
-        },
-        "altmetric-score": 11,
-        "output-type": "article",
-        "historical-mentions": {
-          "1d": 0,
-          "3d": 0,
-          "1w": 0,
-          "1m": 0,
-          "3m": 3,
-          "6m": 3,
-          "1y": 3,
-          "at": 3
-        },
-        "publication-date": "2024-09-27",
-        "badge-url": "https://api.altmetric.com/v1/donut/168591363_240.png",
-        "oa-status": true,
-        "oa-type": "gold",
-        "institution": {
-          "verified": true
-        }
-      },
-      "relationships": {
-        "journal": {
-          "id": "4f6fa62f3cf058f610008259",
-          "type": "journal"
-        },
-        "institutional-authors": [
-          {
-            "id": "univflorida:person:3055",
-            "type": "author"
-          }
-        ],
-        "institutional-departments": [
-          {
-            "id": "univflorida:group:1",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:115",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:20",
-            "type": "department"
-          }
-        ],
-        "affiliations": [
-          {
-            "id": "grid.16821.3c",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.412987.1",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.517910.b",
-            "type": "grid-affiliation"
-          }
-        ],
-        "fields-of-research": [
-          {
-            "id": "31",
-            "type": "field-of-research"
-          },
-          {
-            "id": "3102",
-            "type": "field-of-research"
-          }
-        ],
-        "funders": [
-          {
-            "id": "grid.419696.5",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.424020.0",
-            "type": "grid-funder"
-          },
-          {
-            "id": "grid.452908.2",
-            "type": "grid-funder"
-          }
-        ]
-      }
-    },
-    {
-      "id": 168569047,
-      "type": "research-output",
-      "attributes": {
-        "title": "Identifying Potential Factors Associated With Racial Disparities in COVID-19 Outcomes: Retrospective Cohort Study Using Machine Learning on Real-World Data",
-        "identifiers": {
-          "dois": [
-            "10.2196/54421"
-          ],
-          "pubmed-ids": [
-            "39326040"
-          ],
-          "pmc-ids": [
-            "PMC11467607"
-          ]
-        },
-        "readers": {
-          "mendeley": 8
-        },
-        "dimensions": {
-          "citations": 0
-        },
-        "mentions": {
-          "fbwall": 1,
-          "tweet": 2
-        },
-        "altmetric-score": 1,
-        "output-type": "article",
-        "historical-mentions": {
-          "1d": 0,
-          "3d": 0,
-          "1w": 0,
-          "1m": 0,
-          "3m": 3,
-          "6m": 3,
-          "1y": 3,
-          "at": 3
-        },
-        "publication-date": "2024-09-26",
-        "badge-url": "https://api.altmetric.com/v1/donut/168569047_240.png",
-        "oa-status": true,
-        "oa-type": "gold",
-        "institution": {
-          "verified": true
-        }
-      },
-      "relationships": {
-        "journal": {
-          "id": "5fdb62dff98ee4000a904556",
-          "type": "journal"
-        },
-        "institutional-authors": [
-          {
-            "id": "univflorida:person:3379",
-            "type": "author"
-          },
-          {
-            "id": "univflorida:person:6367",
-            "type": "author"
-          }
-        ],
-        "institutional-departments": [
-          {
-            "id": "univflorida:group:1",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:116",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:183",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:20",
-            "type": "department"
-          },
-          {
-            "id": "univflorida:group:5",
-            "type": "department"
-          }
-        ],
-        "affiliations": [
-          {
-            "id": "grid.15276.37",
-            "type": "grid-affiliation"
-          },
-          {
-            "id": "grid.27755.32",
-            "type": "grid-affiliation"
-          }
-        ],
-        "fields-of-research": [
-          {
-            "id": "42",
-            "type": "field-of-research"
-          },
-          {
-            "id": "4206",
-            "type": "field-of-research"
           }
         ]
       }
@@ -1232,21 +1032,21 @@
   ],
   "included": [
     {
-      "id": "4f6fa52c3cf058f610004095",
+      "id": "4f6fa5133cf058f610003467",
       "type": "journal",
       "attributes": {
-        "title": "Journal of Pathology Informatics",
+        "title": "Research in Higher Education",
         "issns": [
-          "22295089",
-          "21533539"
+          "03610365",
+          "1573188X"
         ]
       }
     },
     {
-      "id": "univflorida:person:942",
+      "id": "univflorida:person:6019",
       "type": "author",
       "attributes": {
-        "name": "LAMB, Damon G"
+        "name": "BRUNSTING, Nelson C"
       }
     },
     {
@@ -1257,17 +1057,17 @@
       }
     },
     {
-      "id": "univflorida:group:197",
+      "id": "univflorida:group:17",
       "type": "department",
       "attributes": {
-        "name": "Psychiatry"
+        "name": "College of Education"
       }
     },
     {
-      "id": "univflorida:group:5",
+      "id": "univflorida:group:277",
       "type": "department",
       "attributes": {
-        "name": "College of Medicine"
+        "name": "Special Education"
       }
     },
     {
@@ -1280,251 +1080,12 @@
       }
     },
     {
-      "id": "grid.413737.5",
+      "id": "grid.241167.7",
       "type": "grid-affiliation",
       "attributes": {
-        "name": "Malcom Randall VA Medical Center",
+        "name": "Wake Forest University",
         "country": "United States",
         "acronym": null
-      }
-    },
-    {
-      "id": "grid.451133.1",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Nvidia (United States)",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "46",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Information and Computing Sciences"
-      }
-    },
-    {
-      "id": "4612",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Software Engineering"
-      }
-    },
-    {
-      "id": "grid.419635.c",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "National Institute of Diabetes and Digestive and Kidney Diseases",
-        "country": "United States",
-        "acronym": "NIDDK"
-      }
-    },
-    {
-      "id": "grid.429307.b",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Breakthrough T1D",
-        "country": "United States",
-        "acronym": "JDRF"
-      }
-    },
-    {
-      "id": "grid.451133.1",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Nvidia (United States)",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "grid.453268.e",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Leona M. and Harry B. Helmsley Charitable Trust",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "4f6fa4cf3cf058f610000665",
-      "type": "journal",
-      "attributes": {
-        "title": "Machine Learning",
-        "issns": [
-          "08856125",
-          "15730565"
-        ]
-      }
-    },
-    {
-      "id": "univflorida:person:2470",
-      "type": "author",
-      "attributes": {
-        "name": "YIN, Mingzhang"
-      }
-    },
-    {
-      "id": "univflorida:group:10",
-      "type": "department",
-      "attributes": {
-        "name": "Warrington College of Business"
-      }
-    },
-    {
-      "id": "univflorida:group:230",
-      "type": "department",
-      "attributes": {
-        "name": "Marketing"
-      }
-    },
-    {
-      "id": "grid.267323.1",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "The University of Texas at Dallas",
-        "country": "United States",
-        "acronym": "UTD"
-      }
-    },
-    {
-      "id": "grid.497062.e",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Netflix (United States)",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "grid.5386.8",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Cornell University",
-        "country": "United States",
-        "acronym": "CU"
-      }
-    },
-    {
-      "id": "4611",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Machine Learning"
-      }
-    },
-    {
-      "id": "4f6fa5313cf058f6100043e3",
-      "type": "journal",
-      "attributes": {
-        "title": "PLOS ONE",
-        "issns": [
-          "19326203"
-        ]
-      }
-    },
-    {
-      "id": "univflorida:person:4363",
-      "type": "author",
-      "attributes": {
-        "name": "LEE, Gwendolyn K"
-      }
-    },
-    {
-      "id": "univflorida:group:227",
-      "type": "department",
-      "attributes": {
-        "name": "Management"
-      }
-    },
-    {
-      "id": "grid.12380.38",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Vrije Universiteit Amsterdam",
-        "country": "Netherlands",
-        "acronym": "VU"
-      }
-    },
-    {
-      "id": "grid.509589.8",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Antwerp Management School",
-        "country": "Belgium",
-        "acronym": "AMS"
-      }
-    },
-    {
-      "id": "grid.517896.4",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Jheronimus Academy of Data Science",
-        "country": "Netherlands",
-        "acronym": "JADS"
-      }
-    },
-    {
-      "id": "grid.5477.1",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Utrecht University",
-        "country": "Netherlands",
-        "acronym": null
-      }
-    },
-    {
-      "id": "5acc7fbf7ac79e305d0c1a53",
-      "type": "journal",
-      "attributes": {
-        "title": "Bioelectronic Medicine",
-        "issns": [
-          "23328886"
-        ]
-      }
-    },
-    {
-      "id": "univflorida:person:115",
-      "type": "author",
-      "attributes": {
-        "name": "QUEEN, Aprinda I"
-      }
-    },
-    {
-      "id": "univflorida:group:11",
-      "type": "department",
-      "attributes": {
-        "name": "College of Public Health and Health Professions"
-      }
-    },
-    {
-      "id": "univflorida:group:161",
-      "type": "department",
-      "attributes": {
-        "name": "Clinical / Health Psychology"
-      }
-    },
-    {
-      "id": "grid.11899.38",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Universidade de São Paulo",
-        "country": "Brazil",
-        "acronym": "USP"
-      }
-    },
-    {
-      "id": "32",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Biomedical and Clinical Sciences"
-      }
-    },
-    {
-      "id": "3202",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Clinical Sciences"
       }
     },
     {
@@ -1542,415 +1103,146 @@
       }
     },
     {
-      "id": "51",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Physical Sciences"
-      }
-    },
-    {
-      "id": "52",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Psychology"
-      }
-    },
-    {
-      "id": "5202",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Biological Psychology"
-      }
-    },
-    {
-      "id": "grid.419475.a",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "National Institute on Aging",
-        "country": "United States",
-        "acronym": "NIA"
-      }
-    },
-    {
-      "id": "grid.427710.7",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Brain & Behavior Research Foundation",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "grid.450640.3",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "National Council for Scientific and Technological Development",
-        "country": "Brazil",
-        "acronym": "CNPq"
-      }
-    },
-    {
-      "id": "grid.452907.d",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "São Paulo Research Foundation",
-        "country": "Brazil",
-        "acronym": "FAPESP"
-      }
-    },
-    {
-      "id": "grid.454766.2",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Fundação de Amparo à Pesquisa do Estado da Bahia",
-        "country": "Brazil",
-        "acronym": "FAPESB"
-      }
-    },
-    {
-      "id": "grid.457799.1",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Directorate for STEM Education",
-        "country": "United States",
-        "acronym": "EDU"
-      }
-    },
-    {
-      "id": "grid.478996.d",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "McKnight Brain Research Foundation",
-        "country": "United States",
-        "acronym": "MBRF"
-      }
-    },
-    {
-      "id": "3",
+      "id": "4",
       "type": "sustainable-development-goal",
       "attributes": {
-        "name": "Good Health and Well Being"
+        "name": "Quality Education"
       }
     },
     {
-      "id": "5e5e7c54ea70b400091b8e76",
+      "id": "4f6fa4ee3cf058f610002c43",
       "type": "journal",
       "attributes": {
-        "title": "Machine Learning: Science and Technology",
+        "title": "Journal of General Internal Medicine",
         "issns": [
-          "26322153"
+          "08848734",
+          "15251497"
         ]
       }
     },
     {
-      "id": "univflorida:person:5072",
+      "id": "univflorida:person:4286",
       "type": "author",
       "attributes": {
-        "name": "KAHVECI, Tamer"
+        "name": "SOTTILE, Elisa"
       }
     },
     {
-      "id": "univflorida:group:13",
+      "id": "univflorida:group:138",
       "type": "department",
       "attributes": {
-        "name": "Herbert Wertheim College of Engineering"
+        "name": "Medicine-Jacksonville"
       }
     },
     {
-      "id": "univflorida:group:293",
+      "id": "univflorida:group:6",
       "type": "department",
       "attributes": {
-        "name": "Computer / Information Science & Engineering"
+        "name": "College of Medicine - Jacksonville"
       }
     },
     {
-      "id": "grid.38575.3c",
+      "id": "grid.170205.1",
       "type": "grid-affiliation",
       "attributes": {
-        "name": "Yıldız Technical University",
-        "country": "Turkey",
-        "acronym": "YTU"
+        "name": "University of Chicago",
+        "country": "United States",
+        "acronym": "UC"
       }
     },
     {
-      "id": "grid.488643.5",
+      "id": "grid.189967.8",
       "type": "grid-affiliation",
       "attributes": {
-        "name": "Sağlık Bilimleri Üniversitesi",
-        "country": "Turkey",
+        "name": "Emory University",
+        "country": "United States",
         "acronym": null
       }
     },
     {
-      "id": "4601",
+      "id": "grid.239424.a",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "Boston Medical Center",
+        "country": "United States",
+        "acronym": "BMC"
+      }
+    },
+    {
+      "id": "grid.27755.32",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "University of Virginia",
+        "country": "United States",
+        "acronym": "UVA"
+      }
+    },
+    {
+      "id": "grid.34477.33",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "University of Washington",
+        "country": "United States",
+        "acronym": "UW"
+      }
+    },
+    {
+      "id": "grid.412689.0",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "University of Pittsburgh Medical Center",
+        "country": "United States",
+        "acronym": "UPMC"
+      }
+    },
+    {
+      "id": "grid.415895.4",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "Lenox Hill Hospital",
+        "country": "United States",
+        "acronym": null
+      }
+    },
+    {
+      "id": "grid.416233.1",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "MacNeal Hospital",
+        "country": "United States",
+        "acronym": null
+      }
+    },
+    {
+      "id": "grid.67033.31",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "Tufts Medical Center",
+        "country": "United States",
+        "acronym": null
+      }
+    },
+    {
+      "id": "grid.67105.35",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "Case Western Reserve University",
+        "country": "United States",
+        "acronym": "CWRU"
+      }
+    },
+    {
+      "id": "32",
       "type": "field-of-research",
       "attributes": {
-        "name": "Applied Computing"
+        "name": "Biomedical and Clinical Sciences"
       }
     },
     {
-      "id": "grid.457785.c",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Directorate for Computer & Information Science & Engineering",
-        "country": "United States",
-        "acronym": "NSF CISE"
-      }
-    },
-    {
-      "id": "grid.457793.b",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Division of Computing and Communication Foundations",
-        "country": "United States",
-        "acronym": "NSF CCF"
-      }
-    },
-    {
-      "id": "60a677e2184e650013360fde",
-      "type": "journal",
-      "attributes": {
-        "title": "Horticulturae",
-        "issns": [
-          "23117524"
-        ]
-      }
-    },
-    {
-      "id": "univflorida:person:2695",
-      "type": "author",
-      "attributes": {
-        "name": "DEWDNEY, Megan M"
-      }
-    },
-    {
-      "id": "univflorida:person:5089",
-      "type": "author",
-      "attributes": {
-        "name": "BURKS, Thomas F"
-      }
-    },
-    {
-      "id": "univflorida:group:34",
-      "type": "department",
-      "attributes": {
-        "name": "Agricultural and Biological Engineering"
-      }
-    },
-    {
-      "id": "univflorida:group:39",
-      "type": "department",
-      "attributes": {
-        "name": "Citrus Research and Education Center - Lake Alfred"
-      }
-    },
-    {
-      "id": "univflorida:group:9",
-      "type": "department",
-      "attributes": {
-        "name": "College of Agricultural and Life Sciences"
-      }
-    },
-    {
-      "id": "grid.263791.8",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "South Dakota State University",
-        "country": "United States",
-        "acronym": "SDSU"
-      }
-    },
-    {
-      "id": "grid.507312.2",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Beltsville Agricultural Research Center",
-        "country": "United States",
-        "acronym": "BARC"
-      }
-    },
-    {
-      "id": "30",
+      "id": "3202",
       "type": "field-of-research",
       "attributes": {
-        "name": "Agricultural, Veterinary and Food Sciences"
-      }
-    },
-    {
-      "id": "univflorida:person:1006",
-      "type": "author",
-      "attributes": {
-        "name": "NELSON, Danielle S"
-      }
-    },
-    {
-      "id": "univflorida:person:1532",
-      "type": "author",
-      "attributes": {
-        "name": "BIAN, Jiang"
-      }
-    },
-    {
-      "id": "univflorida:person:2015",
-      "type": "author",
-      "attributes": {
-        "name": "NGUYEN, Khoa A"
-      }
-    },
-    {
-      "id": "univflorida:person:3428",
-      "type": "author",
-      "attributes": {
-        "name": "STARAS, Stephanie AS"
-      }
-    },
-    {
-      "id": "univflorida:person:3883",
-      "type": "author",
-      "attributes": {
-        "name": "HE, Xing"
-      }
-    },
-    {
-      "id": "univflorida:person:3930",
-      "type": "author",
-      "attributes": {
-        "name": "WU, Yonghui"
-      }
-    },
-    {
-      "id": "univflorida:person:4300",
-      "type": "author",
-      "attributes": {
-        "name": "ROSENBERG, Eric I"
-      }
-    },
-    {
-      "id": "univflorida:person:5050",
-      "type": "author",
-      "attributes": {
-        "name": "SCHMIDT, Siegfried O"
-      }
-    },
-    {
-      "id": "univflorida:person:5440",
-      "type": "author",
-      "attributes": {
-        "name": "WILSON, Debbie L"
-      }
-    },
-    {
-      "id": "univflorida:group:125",
-      "type": "department",
-      "attributes": {
-        "name": "Pharmaceutical Outcomes & Policy"
-      }
-    },
-    {
-      "id": "univflorida:group:129",
-      "type": "department",
-      "attributes": {
-        "name": "Pharmacotherapy and Translational Research"
-      }
-    },
-    {
-      "id": "univflorida:group:179",
-      "type": "department",
-      "attributes": {
-        "name": "Community Health / Family Medicine"
-      }
-    },
-    {
-      "id": "univflorida:group:182",
-      "type": "department",
-      "attributes": {
-        "name": "Health Outcomes & Biomedical Informatics"
-      }
-    },
-    {
-      "id": "univflorida:group:183",
-      "type": "department",
-      "attributes": {
-        "name": "Medicine"
-      }
-    },
-    {
-      "id": "univflorida:group:8",
-      "type": "department",
-      "attributes": {
-        "name": "College of Pharmacy"
-      }
-    },
-    {
-      "id": "grid.21925.3d",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "University of Pittsburgh",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "grid.223827.e",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "University of Utah",
-        "country": "United States",
-        "acronym": "UU"
-      }
-    },
-    {
-      "id": "grid.257413.6",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Indiana University – Purdue University Indianapolis",
-        "country": "United States",
-        "acronym": "IUPUI"
-      }
-    },
-    {
-      "id": "grid.413935.9",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "VA Pittsburgh Healthcare System",
-        "country": "United States",
-        "acronym": "VAPHS"
-      }
-    },
-    {
-      "id": "grid.418356.d",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "United States Department of Veterans Affairs",
-        "country": "United States",
-        "acronym": "VA "
-      }
-    },
-    {
-      "id": "grid.429684.5",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "North Florida/South Georgia Veterans Health System",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "grid.448342.d",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Regenstrief Institute",
-        "country": "United States",
-        "acronym": null
-      }
-    },
-    {
-      "id": "grid.504136.5",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Applied Decision Science (United States)",
-        "country": "United States",
-        "acronym": "ADS"
+        "name": "Clinical Sciences"
       }
     },
     {
@@ -1968,132 +1260,284 @@
       }
     },
     {
-      "id": "4609",
+      "id": "4206",
       "type": "field-of-research",
       "attributes": {
-        "name": "Information Systems"
+        "name": "Public Health"
       }
     },
     {
-      "id": "grid.420090.f",
+      "id": "grid.422332.6",
       "type": "grid-funder",
       "attributes": {
-        "name": "National Institute on Drug Abuse",
+        "name": "Society of General Internal Medicine",
         "country": "United States",
-        "acronym": "NIDA"
+        "acronym": "SGIM"
       }
     },
     {
-      "id": "4f6fa5113cf058f610003281",
+      "id": "4f6fa4da3cf058f61000159d",
       "type": "journal",
       "attributes": {
-        "title": "Pain (03043959)",
+        "title": "Journal of Research on Educational Effectiveness",
         "issns": [
-          "03043959",
-          "18726623"
+          "19345747",
+          "19345739"
         ]
       }
     },
     {
-      "id": "univflorida:person:1115",
+      "id": "univflorida:person:2403",
       "type": "author",
       "attributes": {
-        "name": "BARTLEY, Emily J"
+        "name": "BRATSCH-HINES, Mary"
       }
     },
     {
-      "id": "univflorida:group:14",
+      "id": "univflorida:person:5330",
+      "type": "author",
+      "attributes": {
+        "name": "POEKERT, Philip E"
+      }
+    },
+    {
+      "id": "univflorida:group:272",
       "type": "department",
       "attributes": {
-        "name": "College of Dentistry"
+        "name": "Lastinger Center"
       }
     },
     {
-      "id": "univflorida:group:241",
-      "type": "department",
-      "attributes": {
-        "name": "Community Based Programs"
-      }
-    },
-    {
-      "id": "grid.152326.1",
+      "id": "grid.213876.9",
       "type": "grid-affiliation",
       "attributes": {
-        "name": "Vanderbilt University",
+        "name": "University of Georgia, Athens, United States",
+        "country": "United States",
+        "acronym": "UGA"
+      }
+    },
+    {
+      "id": "grid.266515.3",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "University of Kansas",
+        "country": "United States",
+        "acronym": "KU"
+      }
+    },
+    {
+      "id": "49",
+      "type": "field-of-research",
+      "attributes": {
+        "name": "Mathematical Sciences"
+      }
+    },
+    {
+      "id": "4905",
+      "type": "field-of-research",
+      "attributes": {
+        "name": "Statistics"
+      }
+    },
+    {
+      "id": "4f6fa6363cf058f610008778",
+      "type": "journal",
+      "attributes": {
+        "title": "Review of Research in Education",
+        "issns": [
+          "0091732X",
+          "19351038"
+        ]
+      }
+    },
+    {
+      "id": "univflorida:person:710",
+      "type": "author",
+      "attributes": {
+        "name": "REDDING, Christopher H"
+      }
+    },
+    {
+      "id": "univflorida:group:275",
+      "type": "department",
+      "attributes": {
+        "name": "Human Development and Organizational Studies"
+      }
+    },
+    {
+      "id": "grid.255986.5",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "Florida State University",
+        "country": "United States",
+        "acronym": "FSU"
+      }
+    },
+    {
+      "id": "grid.40803.3f",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "North Carolina State University",
+        "country": "United States",
+        "acronym": "NCSU"
+      }
+    },
+    {
+      "id": "3902",
+      "type": "field-of-research",
+      "attributes": {
+        "name": "Education Policy, Sociology and Philosophy"
+      }
+    },
+    {
+      "id": "4f6fa4f63cf058f610002f0a",
+      "type": "journal",
+      "attributes": {
+        "title": "Journal of Research on Technology in Education",
+        "issns": [
+          "15391523",
+          "19450818"
+        ]
+      }
+    },
+    {
+      "id": "univflorida:person:5724",
+      "type": "author",
+      "attributes": {
+        "name": "ISRAEL, Maya"
+      }
+    },
+    {
+      "id": "univflorida:group:279",
+      "type": "department",
+      "attributes": {
+        "name": "School of Teaching and Learning"
+      }
+    },
+    {
+      "id": "grid.137628.9",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "New York University",
+        "country": "United States",
+        "acronym": "NYU"
+      }
+    },
+    {
+      "id": "grid.280743.a",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "Education Development Center",
+        "country": "United States",
+        "acronym": "EDC"
+      }
+    },
+    {
+      "id": "3901",
+      "type": "field-of-research",
+      "attributes": {
+        "name": "Curriculum and Pedagogy"
+      }
+    },
+    {
+      "id": "3903",
+      "type": "field-of-research",
+      "attributes": {
+        "name": "Education Systems"
+      }
+    },
+    {
+      "id": "4f6fa6053cf058f610006658",
+      "type": "journal",
+      "attributes": {
+        "title": "Journal of Planning Education and Research",
+        "issns": [
+          "0739456X",
+          "15526577"
+        ]
+      }
+    },
+    {
+      "id": "univflorida:person:2196",
+      "type": "author",
+      "attributes": {
+        "name": "HU, Lingqian"
+      }
+    },
+    {
+      "id": "univflorida:group:267",
+      "type": "department",
+      "attributes": {
+        "name": "Urban and Regional Planning"
+      }
+    },
+    {
+      "id": "univflorida:group:7",
+      "type": "department",
+      "attributes": {
+        "name": "College of Design, Construction and Planning"
+      }
+    },
+    {
+      "id": "grid.429997.8",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "Tufts University",
         "country": "United States",
         "acronym": null
       }
     },
     {
-      "id": "grid.19006.3e",
-      "type": "grid-affiliation",
+      "id": "33",
+      "type": "field-of-research",
       "attributes": {
-        "name": "University of California, Los Angeles",
-        "country": "United States",
-        "acronym": "UCLA"
+        "name": "Built Environment and Design"
       }
     },
     {
-      "id": "grid.261037.1",
-      "type": "grid-affiliation",
+      "id": "3304",
+      "type": "field-of-research",
       "attributes": {
-        "name": "North Carolina Agricultural and Technical State University",
-        "country": "United States",
-        "acronym": null
+        "name": "Urban and Regional Planning"
       }
     },
     {
-      "id": "grid.266869.5",
-      "type": "grid-affiliation",
+      "id": "4f6fa4d83cf058f610001391",
+      "type": "journal",
       "attributes": {
-        "name": "University of North Texas",
-        "country": "United States",
-        "acronym": "UNT"
+        "title": "The New Educator",
+        "issns": [
+          "1547688X",
+          "15499243"
+        ]
       }
     },
     {
-      "id": "grid.410721.1",
-      "type": "grid-affiliation",
+      "id": "univflorida:person:1881",
+      "type": "author",
       "attributes": {
-        "name": "University of Mississippi Medical Center",
-        "country": "United States",
-        "acronym": "UMMC"
+        "name": "MUNDORF, Jonathan P"
       }
     },
     {
-      "id": "grid.412807.8",
-      "type": "grid-affiliation",
+      "id": "univflorida:person:3717",
+      "type": "author",
       "attributes": {
-        "name": "Vanderbilt University Medical Center",
-        "country": "United States",
-        "acronym": "VUMC"
+        "name": "VETERE, Timothy M"
       }
     },
     {
-      "id": "grid.4367.6",
-      "type": "grid-affiliation",
+      "id": "univflorida:person:5540",
+      "type": "author",
       "attributes": {
-        "name": "Washington University in St. Louis",
-        "country": "United States",
-        "acronym": "WUSTL"
+        "name": "CHAPMAN, Suzanne"
       }
     },
     {
-      "id": "grid.281076.a",
-      "type": "grid-funder",
+      "id": "univflorida:group:274",
+      "type": "department",
       "attributes": {
-        "name": "National Institute on Minority Health and Health Disparities",
-        "country": "United States",
-        "acronym": "NIMHD"
-      }
-    },
-    {
-      "id": "grid.416868.5",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "National Institute of Mental Health, Bethesda, United States",
-        "country": "United States",
-        "acronym": "NIMH"
+        "name": "P.K. Yonge Developmental Research School"
       }
     },
     {
@@ -2104,149 +1548,112 @@
       }
     },
     {
-      "id": "4f6fa62f3cf058f610008259",
+      "id": "6655ab45d714020001ac8311",
       "type": "journal",
       "attributes": {
-        "title": "Nature Communications",
+        "title": "Advancements in Agricultural Development",
         "issns": [
-          "20411723"
+          "26905078"
         ]
       }
     },
     {
-      "id": "univflorida:person:3055",
+      "id": "univflorida:person:4113",
       "type": "author",
       "attributes": {
-        "name": "LU, Qing T"
+        "name": "MYERS, Brian E"
       }
     },
     {
-      "id": "univflorida:group:115",
+      "id": "univflorida:group:33",
       "type": "department",
       "attributes": {
-        "name": "Biostatistics"
+        "name": "Agricultural Education and Communication"
       }
     },
     {
-      "id": "univflorida:group:20",
+      "id": "univflorida:group:9",
       "type": "department",
       "attributes": {
-        "name": "Public Health and Health Professions - Medicine Integrated Programs"
+        "name": "College of Agricultural and Life Sciences"
       }
     },
     {
-      "id": "grid.16821.3c",
+      "id": "grid.65519.3e",
       "type": "grid-affiliation",
       "attributes": {
-        "name": "Shanghai Jiao Tong University",
-        "country": "China",
-        "acronym": "SJTU"
-      }
-    },
-    {
-      "id": "grid.412987.1",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "XinHua Hospital",
-        "country": "China",
-        "acronym": null
-      }
-    },
-    {
-      "id": "grid.517910.b",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "Chongqing General Hospital",
-        "country": "China",
-        "acronym": null
-      }
-    },
-    {
-      "id": "31",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Biological Sciences"
-      }
-    },
-    {
-      "id": "3102",
-      "type": "field-of-research",
-      "attributes": {
-        "name": "Bioinformatics and Computational Biology"
-      }
-    },
-    {
-      "id": "grid.419696.5",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "National Natural Science Foundation of China",
-        "country": "China",
-        "acronym": "NSFC"
-      }
-    },
-    {
-      "id": "grid.424020.0",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Ministry of Science and Technology of the People's Republic of China",
-        "country": "China",
-        "acronym": "MOST"
-      }
-    },
-    {
-      "id": "grid.452908.2",
-      "type": "grid-funder",
-      "attributes": {
-        "name": "Shanghai Municipal Education Commission",
-        "country": "China",
-        "acronym": "SHMEC"
-      }
-    },
-    {
-      "id": "5fdb62dff98ee4000a904556",
-      "type": "journal",
-      "attributes": {
-        "title": "JMIR Public Health and Surveillance",
-        "issns": [
-          "23692960"
-        ]
-      }
-    },
-    {
-      "id": "univflorida:person:3379",
-      "type": "author",
-      "attributes": {
-        "name": "KIMMEL, Stephen"
-      }
-    },
-    {
-      "id": "univflorida:person:6367",
-      "type": "author",
-      "attributes": {
-        "name": "LAUBENBACHER, Reinhard C"
-      }
-    },
-    {
-      "id": "univflorida:group:116",
-      "type": "department",
-      "attributes": {
-        "name": "Epidemiology"
-      }
-    },
-    {
-      "id": "grid.27755.32",
-      "type": "grid-affiliation",
-      "attributes": {
-        "name": "University of Virginia",
+        "name": "Oklahoma State University",
         "country": "United States",
-        "acronym": "UVA"
+        "acronym": "OSU"
       }
     },
     {
-      "id": "4206",
-      "type": "field-of-research",
+      "id": "4f6fa6023cf058f6100063d2",
+      "type": "journal",
       "attributes": {
-        "name": "Public Health"
+        "title": "Research in Science Education",
+        "issns": [
+          "0157244X",
+          "15731898"
+        ]
+      }
+    },
+    {
+      "id": "univflorida:person:2067",
+      "type": "author",
+      "attributes": {
+        "name": "CRIPPEN, Kent J"
+      }
+    },
+    {
+      "id": "univflorida:person:6434",
+      "type": "author",
+      "attributes": {
+        "name": "NEWBUTT, Nigel A"
+      }
+    },
+    {
+      "id": "4f6fa6013cf058f6100062ee",
+      "type": "journal",
+      "attributes": {
+        "title": "Journal of Special Education Technology",
+        "issns": [
+          "01626434"
+        ]
+      }
+    },
+    {
+      "id": "univflorida:person:6022",
+      "type": "author",
+      "attributes": {
+        "name": "BURNS, Matthew K"
+      }
+    },
+    {
+      "id": "grid.134936.a",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "University of Missouri",
+        "country": "United States",
+        "acronym": "MU"
+      }
+    },
+    {
+      "id": "grid.266757.7",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "University of Missouri–St. Louis",
+        "country": "United States",
+        "acronym": "UMSL"
+      }
+    },
+    {
+      "id": "grid.89336.37",
+      "type": "grid-affiliation",
+      "attributes": {
+        "name": "The University of Texas at Austin",
+        "country": "United States",
+        "acronym": null
       }
     }
   ]

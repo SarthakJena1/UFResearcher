@@ -1,0 +1,112 @@
+// Colors
+$primary-blue: #0021A5;
+$secondary-blue: #002657;
+$accent-green: #22884C;
+$button-bg: #FA4616;
+$button-hover: #0056b3;
+$text-color: #fff;
+$input-border: #ccc;
+
+// Fonts
+$font-stack: 'Arial', sans-serif;
+$font-lato: 'Lato', sans-serif;
+
+// Body and Page Setup
+.login-page {
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+  background: linear-gradient(90deg, $primary-blue, $secondary-blue);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+
+  // Login/Register Container
+  .login-container {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 340px;
+    text-align: center;
+    z-index: 2;
+
+    h2 {
+      font-family: $font-lato;
+      color: $accent-green;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+      text-align: left;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: $text-color;
+        font-size: 0.9rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $input-border;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+          border-color: $accent-green;
+          box-shadow: 0 0 5px $accent-green;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: $button-bg;
+      color: $text-color;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $button-hover;
+      }
+    }
+
+    .error {
+      color: #ff4d4d;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .success {
+      color: #4caf50;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .toggle-form {
+      background: none;
+      border: none;
+      color: $accent-green;
+      margin-top: 10px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+

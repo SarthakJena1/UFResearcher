@@ -9,6 +9,7 @@ function Login() {
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
 
+    // Login Handler
     const handleLogin = async (event) => {
         event.preventDefault();
         setError('');
@@ -27,7 +28,7 @@ function Login() {
             });
 
             const data = await response.json();
-            console.log('Login Response:', data); //debugging log
+            console.log('Login Response:', data);
 
             if (!response.ok) {
                 setError(data.message || 'Failed to log in.');
@@ -35,20 +36,23 @@ function Login() {
             }
 
             setMessage('Login successful! Redirecting...');
-            setTimeout(() => {
-                setMessage('');
-                // add navigation logic here (if needed) (auth)
-            }, 2000);
+            setTimeout(() => setMessage(''), 2000);
         } catch (err) {
-            console.error('Login Error:', err);
+            console.error('Login Error:', err.message);
             setError('An error occurred during login. Please try again.');
         }
     };
 
+    // Register Handler
     const handleRegister = async (event) => {
         event.preventDefault();
         setError('');
         setMessage('');
+
+        if (!username.endsWith('@ufl.edu')) {
+            setError('Please enter a valid UFL email address.');
+            return;
+        }
 
         if (password !== confirmPassword) {
             setError('Passwords do not match.');
@@ -76,11 +80,12 @@ function Login() {
                 setIsLoginView(true);
             }, 2000);
         } catch (err) {
-            console.error('Registration Error:', err);
+            console.error('Registration Error:', err.message);
             setError('An error occurred during registration. Please try again.');
         }
     };
 
+    // Toggle View
     const toggleView = () => {
         setIsLoginView(!isLoginView);
         setError('');
@@ -94,8 +99,7 @@ function Login() {
             <div id="stars2"></div>
             <div id="stars3"></div>
 
-///login + register form
-
+            {/* Login/Register Container */}
             <div className="login-container">
                 <h2>{isLoginView ? 'Login' : 'Register'}</h2>
                 <form onSubmit={isLoginView ? handleLogin : handleRegister}>

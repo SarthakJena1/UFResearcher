@@ -20,7 +20,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/login', {
+            const response = await fetch('http://localhost:5001/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -50,13 +50,18 @@ function Login() {
         setError('');
         setMessage('');
 
+        if (!username.endsWith('@ufl.edu')) {
+            setError('Please enter a valid UFL email address.');
+            return;
+        }
+
         if (password !== confirmPassword) {
             setError('Passwords do not match.');
             return;
         }
 
         try {
-            const response = await fetch('http://localhost:5000/register', {
+            const response = await fetch('http://localhost:5001/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -94,7 +99,7 @@ function Login() {
             <div id="stars2"></div>
             <div id="stars3"></div>
 
-///login + register form
+            {/* Login form */}
 
             <div className="login-container">
                 <h2>{isLoginView ? 'Login' : 'Register'}</h2>

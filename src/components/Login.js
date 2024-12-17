@@ -22,7 +22,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/login', {
+            const response = await fetch('http://localhost:5001/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -59,7 +59,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/register', {
+            const response = await fetch('http://localhost:5001/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -88,6 +88,10 @@ function Login() {
 
     return (
         <div className="login-page">
+            <div style={{ textAlign: 'center', padding: '50px' }}>
+            <h1>Welcome to ResearchGator!</h1>
+            <p>ResearchGator is a platform for you to find research opportunities here at UF!</p>
+            </div>
             <div className="login-container">
                 <h2>{isLoginView ? 'Login' : 'Register'}</h2>
                 <form onSubmit={isLoginView ? handleLogin : handleRegister}>

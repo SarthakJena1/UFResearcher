@@ -8,19 +8,35 @@ const Dashboard = () => {
     const [options, setOptions] = useState({
         machineLearning: false,
         medicine: false,
+        artificialIntelligence: false,
     });
+    const [loading, setLoading] = useState(false);
+    const [results, setResults] = useState([]);
 
-
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(`
-        Suggestions based on:
-        Major: ${major}
-        Interests: ${interests}
-        Skills: ${skills}
-        Preferences: ${JSON.stringify(options, null, 2)}
-        `);
+        setLoading(true);
+        setResults([]);
+        try {
+            // request
+            const response = await fetch('http://localhost:5001/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ major, interests, skills }),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            setResults(data);
+        } catch (error) {
+            console.error('Error:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -78,9 +94,26 @@ const Dashboard = () => {
                     </div>
 
                     <button type="submit">
-                        Get Suggestions
+                        {loading ? 'Loading...' : 'Get Suggestions'}
                     </button>
                 </form>
+                {/* Display results here */}
+                <div className="results" style={{maxHeight: '300px', overflowY: 'auto', border: '1px solid #ccc'}}>
+                    {results.length > 0 && (
+                        <div>
+                            <h3>Results:</h3>
+                            <ul>
+                                {results.map((result, index) => (
+                                    <li key={index} style={{marginBottom: '15px', lineHeight: '1.6'}}>
+                                        <strong>Title: </strong> {result.title} <br />
+                                        <strong>Authors: </strong> {Array.isArray(result.authors) ? result.authors.join(', ') : 'No Authors Found'} <br />
+                                        <strong>Departments: </strong> {Array.isArray(result.departments) ? result.departments.join(', ') : 'No Departments Found'}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

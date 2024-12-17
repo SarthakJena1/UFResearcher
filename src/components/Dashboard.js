@@ -7,16 +7,13 @@ const Dashboard = () => {
     const [skills, setSkills] = useState('');
     const [options, setOptions] = useState({
         machineLearning: false,
-        ai: false,
         medicine: false,
     });
 
-    const handleCheckboxChange = (e) => {
-        const { name, checked } = e.target;
-        setOptions((prevOptions) => ({ ...prevOptions, [name]: checked }));
-    };
 
-    const handleSubmit = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
         alert(`
         Suggestions based on:
         Major: ${major}
@@ -33,17 +30,6 @@ const Dashboard = () => {
                 <p>Explore opportunities tailored for you</p>
             </div>
 
-            {/* Options Buttons */}
-            <div className="options">
-                <button onClick={() => alert("Show full Research Directory")}>
-                    View Research Opportunities
-                </button>
-                <button onClick={() => alert("Show Professors Directory")}>
-                    View Professors Directory
-                </button>
-            </div>
-
-            {/* Trending Searches */}
             <div className="trending">
                 <h2>Trending Searches</h2>
                 <ul>
@@ -53,10 +39,9 @@ const Dashboard = () => {
                 </ul>
             </div>
 
-            {/* Suggestion Engine */}
             <div className="suggestion-engine">
                 <h2>Get Personalized Suggestions</h2>
-                <form onSubmit={(e) => e.preventDefault()}>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Major:</label>
                         <input
@@ -68,12 +53,16 @@ const Dashboard = () => {
                     </div>
                     <div className="form-group">
                         <label>Interests:</label>
-                        <input
-                            type="text"
-                            placeholder="e.g., Artificial Intelligence"
+                        <select
                             value={interests}
                             onChange={(e) => setInterests(e.target.value)}
-                        />
+                        >
+                            <option value="">Select an Interest</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Medicine">Medicine</option>
+                            {/* Add more options as needed */}
+                        </select>
                     </div>
                     <div className="form-group">
                         <label>Skills Interested In:</label>
@@ -88,38 +77,7 @@ const Dashboard = () => {
                         </select>
                     </div>
 
-                    {/* Checkboxes */}
-                    <div className="form-checkbox">
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="machineLearning"
-                                checked={options.machineLearning}
-                                onChange={handleCheckboxChange}
-                            />
-                            Machine Learning
-                        </label>
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="ai"
-                                checked={options.ai}
-                                onChange={handleCheckboxChange}
-                            />
-                            Artificial Intelligence
-                        </label>
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="medicine"
-                                checked={options.medicine}
-                                onChange={handleCheckboxChange}
-                            />
-                            Medicine
-                        </label>
-                    </div>
-
-                    <button type="submit" onClick={handleSubmit}>
+                    <button type="submit">
                         Get Suggestions
                     </button>
                 </form>

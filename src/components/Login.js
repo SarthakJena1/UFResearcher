@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function Login() {
@@ -8,8 +9,8 @@ function Login() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
-    // Login Handler
     const handleLogin = async (event) => {
         event.preventDefault();
         setError('');
@@ -21,7 +22,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch('http://localhost:5001/login', {
+            const response = await fetch('http://localhost:5000/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -32,18 +33,16 @@ function Login() {
 
             if (!response.ok) {
                 setError(data.message || 'Failed to log in.');
-                return;
+            } else {
+                setMessage('Login successful!');
+                navigate('/dashboard'); // Immediate redirect to Dashboard
             }
-
-            setMessage('Login successful! Redirecting...');
-            setTimeout(() => setMessage(''), 2000);
         } catch (err) {
             console.error('Login Error:', err.message);
             setError('An error occurred during login. Please try again.');
         }
     };
 
-    // Register Handler
     const handleRegister = async (event) => {
         event.preventDefault();
         setError('');
@@ -60,7 +59,7 @@ function Login() {
         }
 
         try {
-            const response = await fetch('http://localhost:5001/register', {
+            const response = await fetch('http://localhost:5000/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -71,21 +70,16 @@ function Login() {
 
             if (!response.ok) {
                 setError(data.message || 'Failed to register.');
-                return;
+            } else {
+                setMessage('Registration successful! Redirecting to login...');
+                setIsLoginView(true); // Switch to login view
             }
-
-            setMessage('Registration successful! Redirecting to login...');
-            setTimeout(() => {
-                setMessage('');
-                setIsLoginView(true);
-            }, 2000);
         } catch (err) {
             console.error('Registration Error:', err.message);
             setError('An error occurred during registration. Please try again.');
         }
     };
 
-    // Toggle View
     const toggleView = () => {
         setIsLoginView(!isLoginView);
         setError('');
@@ -94,12 +88,6 @@ function Login() {
 
     return (
         <div className="login-page">
-            {/* Background stars */}
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-
-            {/* Login/Register Container */}
             <div className="login-container">
                 <h2>{isLoginView ? 'Login' : 'Register'}</h2>
                 <form onSubmit={isLoginView ? handleLogin : handleRegister}>
@@ -140,9 +128,7 @@ function Login() {
                     {message && <div className="success">{message}</div>}
                 </form>
                 <button onClick={toggleView} className="toggle-form">
-                    {isLoginView
-                        ? 'Need to register? Click here.'
-                        : 'Already have an account? Log in here.'}
+                    {isLoginView ? 'Need to register? Click here.' : 'Already have an account? Log in here.'}
                 </button>
             </div>
         </div>

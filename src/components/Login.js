@@ -27,15 +27,21 @@ function Login() {
             });
 
             const data = await response.json();
+            console.log('Login Response:', data); //debugging log
 
             if (!response.ok) {
-                setError(data.message || 'Failed to log in');
+                setError(data.message || 'Failed to log in.');
                 return;
             }
 
-            setMessage('Login successful!');
+            setMessage('Login successful! Redirecting...');
+            setTimeout(() => {
+                setMessage('');
+                // add navigation logic here (if needed) (auth)
+            }, 2000);
         } catch (err) {
-            setError('An error occurred while logging in. Please try again.');
+            console.error('Login Error:', err);
+            setError('An error occurred during login. Please try again.');
         }
     };
 
@@ -57,9 +63,10 @@ function Login() {
             });
 
             const data = await response.json();
+            console.log('Register Response:', data);
 
             if (!response.ok) {
-                setError(data.message || 'Failed to register');
+                setError(data.message || 'Failed to register.');
                 return;
             }
 
@@ -69,6 +76,7 @@ function Login() {
                 setIsLoginView(true);
             }, 2000);
         } catch (err) {
+            console.error('Registration Error:', err);
             setError('An error occurred during registration. Please try again.');
         }
     };
@@ -86,7 +94,8 @@ function Login() {
             <div id="stars2"></div>
             <div id="stars3"></div>
 
-            {/* Login/Register Container */}
+///login + register form
+
             <div className="login-container">
                 <h2>{isLoginView ? 'Login' : 'Register'}</h2>
                 <form onSubmit={isLoginView ? handleLogin : handleRegister}>

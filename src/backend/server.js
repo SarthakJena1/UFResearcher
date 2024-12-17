@@ -2,56 +2,63 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import mongoose from 'mongoose';
 
 const app = express();
 const port = 5000;
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-const users = []
+// Connect to MongoDB Atlas
+const uri = "mongodb+srv://sarthakjena05:m7MqJULGGBm3ns8a@gatorresearch.g0l2t.mongodb.net/?retryWrites=true&w=majority&appName=GatorResearch";
 
-// register
-app.post("/register", async (req, res) =>  {
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("MongoDB Atlas connected successfully"))
+    .catch((err) => console.error("MongoDB connection failed:", err));
+
+// User Schema
+const userSchema = new mongoose.Schema({
+    username: String,
+    password: String
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Register Route
+app.post("/register", async (req, res) => {
     const { username, password } = req.body;
 
-    const hashPass = await bcrypt.hash(password, 10);
+    try {
+        const hashPass = await bcrypt.hash(password, 10);
+        const newUser = new User({ username, password: hashPass });
+        await newUser.save();
+        res.json({ message: "User registered successfully" });
+    } catch (err) {
+        res.status(500).json({ message: "Error registering user" });
+    }
+});
 
-    // save users
-    users.push({
-        username,
-        password: hashPass
-    });
-    res.json({ message: "User registered" });
-})
-
-// login
+// Login Route
 app.post("/login", async (req, res) => {
-    const {username, password} = req.body;
-    const user = users.find(user => user.username === username);
+    const { username, password } = req.body;
 
-    if (!user) {
-        return res.status(400).json({message: "User not found"});
+    try {
+        const user = await User.findOne({ username });
+        if (!user) return res.status(400).json({ message: "User not found" });
+
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) return res.status(400).json({ message: "Invalid password" });
+
+        const token = jwt.sign({ username }, "secretkey", { expiresIn: "1h" });
+        res.json({ message: "Login successful", token });
+    } catch (err) {
+        res.status(500).json({ message: "Error logging in" });
     }
-
-    const isValid = await bcrypt.compare(password, user.password);
-    if (!isValid) {
-        return res.status(400).json({message: "Invalid password"});
-    }
-
-    // generate token
-    const token = jwt.sign({ username }, "secretkey", { expiresIn: "1h" });
-    res.json({ message: "Login successful" });
 });
 
-// default route
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
+// Start the server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

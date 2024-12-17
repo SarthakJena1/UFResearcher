@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.scss';
+import {Link} from "react-router-dom";
 
 function Login() {
     const [isLoginView, setIsLoginView] = useState(true);
@@ -98,6 +99,14 @@ function Login() {
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
+            <div style={{textAlign: 'center', padding: '50px'}}>
+                <h1>Welcome to ResearchGator!</h1>
+                <p>ResearchGator is a platform for you to find research opportunities here at UF!</p>
+                {/* Link Button to Login Page */}
+                {/*<Link to="/login">*/}
+                {/*    <button>Get Started</button>*/}
+                {/*</Link>*/}
+            </div>
 
             {/* Login/Register Container */}
             <div className="login-container">

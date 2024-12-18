@@ -1,1 +1,1 @@
-Based off the **simplified-suggestions** code, basic auth implimentation for now
+Based off the **simplified-suggestions** code, basic verification implimentation for now

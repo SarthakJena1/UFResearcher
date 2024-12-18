@@ -142,15 +142,52 @@ app.get("/verify", async (req, res) => {
     try {
         const {token} = req.query;
         const user = await User.findOne({verificationToken: token});
-        console.log("before verification", user);
         if (!user) {
-            return res.status(400).json({message: "Invalid token"});
+            return res.status(400).send(`
+            <html>
+                <body style="
+                    text-align: center; 
+                    margin-top: 50px; 
+                    height: 100vh; 
+                    display: flex; 
+                    justify-content: center; 
+                    align-items: center;
+                    background: linear-gradient(90deg, #0021A5, #002657);
+                    color: #fff;
+                    font-family: Arial, sans-serif;
+                ">
+                    <h2>Invalid or expired token</h2>
+                    <p>Please try again or contact support</p>
+                </body>
+            </html>
+            `)
         }
         user.verified = true;
         user.verificationToken = null
         await user.save();
-        console.log("after verification", user);
-        res.json({message: "Email verified"});
+        res.send(`
+        <html>
+            <body style="
+                text-align: center; 
+                margin-top: 50px; 
+                height: 100vh; 
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                background: linear-gradient(90deg, #0021A5, #002657);
+                color: #fff;
+                font-family: Arial, sans-serif;
+            ">
+                <h2 style="color: #22884C; margin: 0 0 15px 0">Email verified successfully! </h2>
+                <p style="margin: 0">You can now log in. This page will automatically close in 5 seconds.</p>
+                <script>
+                    setTimeout(() => {
+                        window.close();
+                    }, 5000);
+                </script>
+            </body>
+        </html>     
+        `)
     }
     catch (err) {
         res.status(500).json({message: "Error verifying email"});

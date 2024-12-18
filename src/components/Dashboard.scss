@@ -1,47 +1,24 @@
 .dashboard {
   font-family: Arial, sans-serif;
-  background: linear-gradient(90deg, #0021A5, #002657);
-  color: #fff;
+  background: #FAFAF8; // off - white
+  color: #333333; // dark gray
   min-height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
 
-  .header {
+  .header, .trending {
     text-align: center;
     margin-bottom: 30px;
 
-    h1 {
+    h1, h2 {
       margin: 0;
+      padding: 10px 0;
+      color: #0021A5; // uf blue - headers
     }
+
     p {
       font-size: 1.2em;
     }
-  }
-
-  .options {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-
-    button {
-      background: #FA4616;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-
-      &:hover {
-        background: #0056b3;
-      }
-    }
-  }
-
-  .trending {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 30px;
 
     ul {
       list-style: none;
@@ -49,49 +26,73 @@
 
       li {
         margin: 5px 0;
+        color: #00529B; // light blue for list
       }
     }
   }
 
   .suggestion-engine {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #FFFFFF; // white background
     padding: 20px;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); // shadow soft
+    border: 1px solid #E0E0E0; // light gray border
 
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      position: relative;
 
       label {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #333333; // dark gray labels
       }
 
       input, select {
         width: 100%;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #CCC; // light gray border - input
+        background: #F8F8F8; // ligher gray for input background
+      }
+
+      .dropdown-content {
+        position: absolute;
+        background-color: #FFFFFF; // white for dropdown background
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         padding: 10px;
         border-radius: 5px;
-        border: none;
-      }
-    }
-
-    .form-checkbox {
-      label {
-        display: block;
-        margin: 5px 0;
+        z-index: 1000;
+        width: 95%;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #DDD; // light border - dropdown
       }
     }
 
     button {
-      margin-top: 10px;
-      background: #FA4616;
-      color: #fff;
+      display: block;
+      width: 100%;
+      background: #FF6600; // uf orange buttons
+      color: #FFF;
       border: none;
       padding: 10px;
       border-radius: 5px;
       cursor: pointer;
+      margin-top: 10px;
 
       &:hover {
-        background: #0056b3;
+        background: #CC5200; // darker orange for hover - button
+      }
+    }
+
+    .directory-button {
+      background: #00529B; // uf blue for sec button
+
+      &:hover {
+        background: #003C7E; // darker uf blue for hover - button
       }
     }
   }

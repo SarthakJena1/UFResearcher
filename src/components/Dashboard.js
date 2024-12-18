@@ -31,6 +31,7 @@ const Dashboard = () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
+
             setResults(data);
         } catch (error) {
             console.error('Error:', error);

@@ -5,6 +5,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import crypto from 'crypto';
 import fetch from 'node-fetch';
+import nodemailer from 'nodemailer';
 
 const app = express();
 const apiKey = '078fc03a4fca4bbfb9b852bdf080234d'
@@ -31,10 +32,21 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 // User Schema
 const userSchema = new mongoose.Schema({
     username: { type: String, unique: true, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    verified: { type: Boolean, default: false },
+    verificationToken: { type: String }
 });
 
 const User = mongoose.model('User', userSchema);
+
+// verification transporter
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'gatorresearchtest@gmail.com',
+        pass: 'blka fcyl stql uhcr'
+    }
+});
 
 // HMAC-SHA256
 function generateDigest(secret, data) {
@@ -99,17 +111,49 @@ app.post("/register", async (req, res) => {
             return res.status(400).json({ message: "User already exists. Please log in." });
         }
 
+        // Generate verification token
+        const verificationToken = crypto.randomBytes(32).toString('hex');
+
         // Hash password
         const hashPass = await bcrypt.hash(password, 10);
 
         // Save user
-        const newUser = new User({ username, password: hashPass });
+        const newUser = new User({ username, password: hashPass, verificationToken});
         await newUser.save();
+
+        // send verification email
+        const verificationLink = `http://localhost:5001/verify?token=${verificationToken}`;
+        await transporter.sendMail({
+            from: 'ResearchGator" <gatorresearchtest@gmail.com>',
+            to: username,
+            subject: 'Please verify your email for ResearchGator',
+            text: `Click on the link to verify your email: ${verificationLink}`
+        });
 
         res.json({ message: "User registered successfully" });
     } catch (err) {
         console.error("Error during registration:", err.message);
         res.status(500).json({ message: "Error registering user" });
+    }
+});
+
+// verify route
+app.get("/verify", async (req, res) => {
+    try {
+        const {token} = req.query;
+        const user = await User.findOne({verificationToken: token});
+        console.log("before verification", user);
+        if (!user) {
+            return res.status(400).json({message: "Invalid token"});
+        }
+        user.verified = true;
+        user.verificationToken = null
+        await user.save();
+        console.log("after verification", user);
+        res.json({message: "Email verified"});
+    }
+    catch (err) {
+        res.status(500).json({message: "Error verifying email"});
     }
 });
 
@@ -127,6 +171,11 @@ app.post("/login", async (req, res) => {
         const user = await User.findOne({ username });
         if (!user) {
             return res.status(400).json({ message: "User not found." });
+        }
+
+        // Check if user is verified
+        if (!user.verified) {
+            return res.status(400).json({ message: "User not verified." });
         }
 
         // Compare password
@@ -173,8 +222,6 @@ app.post("/search", async (req, res) => {
             const departmentNames = department.map((dept) => departmentMap[dept.id] || 'Unknown').filter(Boolean);
             return {title, authors: authorNames, departments: departmentNames};
         });
-         const output = results.join('\n\n');
-         console.log('Results:\n', output);
 
         res.json(results);
     } catch (error) {

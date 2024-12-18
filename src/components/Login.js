@@ -66,12 +66,11 @@ function Login() {
             });
 
             const data = await response.json();
-            console.log('Register Response:', data);
 
             if (!response.ok) {
                 setError(data.message || 'Failed to register.');
             } else {
-                setMessage('Registration successful! Redirecting to login...');
+                setMessage('Registration successful! A verification link has been sent to your email. Redirecting to login...');
                 setIsLoginView(true); // Switch to login view
             }
         } catch (err) {

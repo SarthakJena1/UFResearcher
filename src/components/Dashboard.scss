@@ -1,98 +1,117 @@
 .dashboard {
   font-family: Arial, sans-serif;
-  background: #FAFAF8; // off - white
-  color: #333333; // dark gray
+  background: #FAFAF8;
+  color: #333333;
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 
-  .header, .trending {
+  .header {
     text-align: center;
     margin-bottom: 30px;
 
-    h1, h2 {
+    h1 {
       margin: 0;
-      padding: 10px 0;
-      color: #0021A5; // uf blue - headers
+      color: #0021A5; // uf blue
     }
 
     p {
       font-size: 1.2em;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin: 5px 0;
-        color: #00529B; // light blue for list
-      }
-    }
   }
 
   .suggestion-engine {
-    background-color: #FFFFFF; // white background
+    background-color: #FFFFFF;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); // shadow soft
-    border: 1px solid #E0E0E0; // light gray border
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E0E0E0;
 
     .form-group {
       margin-bottom: 20px;
-      position: relative;
 
       label {
         display: block;
         margin-bottom: 8px;
-        cursor: pointer;
         font-weight: bold;
-        color: #333333; // dark gray labels
       }
 
-      input, select {
+      input {
         width: 100%;
-        padding: 10px 15px;
-        border-radius: 5px;
-        border: 1px solid #CCC; // light gray border - input
-        background: #F8F8F8; // ligher gray for input background
-      }
-
-      .dropdown-content {
-        position: absolute;
-        background-color: #FFFFFF; // white for dropdown background
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         padding: 10px;
         border-radius: 5px;
-        z-index: 1000;
-        width: 95%;
-        max-height: 200px;
-        overflow-y: auto;
-        border: 1px solid #DDD; // light border - dropdown
+        border: 1px solid #CCC;
+        background: #F8F8F8;
       }
     }
 
     button {
-      display: block;
       width: 100%;
-      background: #FF6600; // uf orange buttons
-      color: #FFF;
-      border: none;
       padding: 10px;
       border-radius: 5px;
+      border: none;
       cursor: pointer;
-      margin-top: 10px;
+      font-weight: bold;
 
-      &:hover {
-        background: #CC5200; // darker orange for hover - button
+      &.get-suggestions {
+        background: #FF6600; // uf orange
+        color: #FFF;
+
+        &:hover {
+          background: #CC5200;
+        }
+      }
+
+      &.directory-button {
+        background: #0021A5; // uf blue
+        color: #FFF;
+        margin-top: 10px;
+
+        &:hover {
+          background: #001970; // darker uf blue
+        }
+      }
+
+      &.contact-button {
+        background: #00529B; // uf blue
+        color: #FFF;
+        margin-top: 10px;
+
+        &:hover {
+          background: #003C7E; // dark uf blue
+        }
       }
     }
+  }
 
-    .directory-button {
-      background: #00529B; // uf blue for sec button
+  .results-section {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: scroll;
 
-      &:hover {
-        background: #003C7E; // darker uf blue for hover - button
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .compact-results {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #DDD;
+        border-radius: 5px;
+        background: #FFF;
+
+        strong {
+          color: #0021A5; // uf blue for titles
+        }
+
+        small {
+          color: #555; // light/subtle gray for authors
+        }
       }
     }
   }

@@ -1,43 +1,56 @@
 // Colors
-$primary-blue: #0021A5;
-$secondary-blue: #002657;
-$accent-green: #22884C;
-$button-bg: #FA4616;
-$button-hover: #0056b3;
-$text-color: #fff;
-$input-border: #ccc;
+$primary-background: #FAFAF8; // Light background
+$border-color: #E0E0E0; // Light gray for borders
+$button-bg: #FF6600; // UF Orange
+$button-hover: #CC5200; // Darker Orange
+$text-color: #333333; // Neutral dark text
+$header-blue: #0021A5; // UF Blue for headers
 
 // Fonts
 $font-stack: 'Arial', sans-serif;
-$font-lato: 'Lato', sans-serif;
 
 // Body and Page Setup
 .login-page {
   margin: 0;
   padding: 0;
   font-family: $font-stack;
-  background: linear-gradient(90deg, $primary-blue, $secondary-blue);
+  background: $primary-background;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow: hidden;
 
+  // Header Section
+  .welcome-header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h1 {
+      color: $header-blue; // Explicitly set the header color to UF Blue
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+      color: $text-color; // Neutral dark color for the description
+    }
+  }
 
   // Login/Register Container
   .login-container {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: #FFFFFF; // White background
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Subtle shadow
     width: 340px;
     text-align: center;
-    z-index: 2;
+    border: 1px solid $border-color;
 
     h2 {
-      font-family: $font-lato;
-      color: $accent-green;
+      font-family: $font-stack;
+      color: $header-blue; // UF Blue for login header
       margin-bottom: 1.5rem;
     }
 
@@ -55,15 +68,15 @@ $font-lato: 'Lato', sans-serif;
       input {
         width: 100%;
         padding: 10px;
-        border: 1px solid $input-border;
+        border: 1px solid $border-color;
         border-radius: 5px;
         font-size: 1rem;
         box-sizing: border-box;
 
         &:focus {
           outline: none;
-          border-color: $accent-green;
-          box-shadow: 0 0 5px $accent-green;
+          border-color: $button-bg;
+          box-shadow: 0 0 5px rgba(255, 102, 0, 0.5); // UF Orange glow
         }
       }
     }
@@ -72,7 +85,7 @@ $font-lato: 'Lato', sans-serif;
       width: 100%;
       padding: 10px;
       background-color: $button-bg;
-      color: $text-color;
+      color: #FFFFFF; // White text
       font-size: 1rem;
       border: none;
       border-radius: 5px;
@@ -99,7 +112,7 @@ $font-lato: 'Lato', sans-serif;
     .toggle-form {
       background: none;
       border: none;
-      color: $accent-green;
+      color: $button-bg;
       margin-top: 10px;
       cursor: pointer;
 
@@ -109,4 +122,3 @@ $font-lato: 'Lato', sans-serif;
     }
   }
 }
-

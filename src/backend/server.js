@@ -53,7 +53,6 @@ function generateDigest(secret, data) {
     return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 
-
 function createRequestURL({ q, timeframe, type, pages }) {
     const scope = 'institution';
     const filters = `q|${q}|scope|${scope}|timeframe|${timeframe}|type|${type}`;
@@ -73,8 +72,6 @@ function createRequestURL({ q, timeframe, type, pages }) {
     });
     return baseURL + queryParams.toString();
 }
-
-
 
 function getAuthors(data) {
     const authors = {};
@@ -160,31 +157,37 @@ app.post("/login", async (req, res) => {
 
 // Search Route
 app.post("/search", async (req, res) => {
-    const { major, interests = [], skills = [] } = req.body;
+    const { major, interests = [] } = req.body;
     try {
-        const q = `${major} ${interests.join(" ")} ${skills.join(" ")}`.trim();
+        const q = `${major} ${interests.join(" ")}`.trim();
         const timeframe = '1y';
         const type = 'article';
-        const pages = 10;
+        const pages = 20; // Display top 20 results
 
         const url = createRequestURL({ q, timeframe, type, pages });
+        console.log("Generated URL:", url); // Debugging purpose
+
         const response = await fetch(url);
         const data = await response.json();
 
-        const authorMap = getAuthors(data.included);
-        const departmentMap = getDepartments(data.included);
+        if (!data || !data.data) {
+            console.error("Invalid API response:", data);
+            return res.status(500).json({ message: "Invalid response from the Altmetric API" });
+        }
 
-        const results = data.data.map(item => {
-            const title = item.attributes.title || 'N/A';
-            const authors = item.relationships['institutional-authors']?.map(a => authorMap[a.id]) || [];
-            const departments = item.relationships['institutional-departments']?.map(d => departmentMap[d.id]) || [];
-            return { title, authors, departments };
-        });
+        const authorMap = getAuthors(data.included || []);
+        const departmentMap = getDepartments(data.included || []);
+
+        const results = data.data.map((item) => ({
+            title: item.attributes?.title || 'N/A',
+            authors: item.relationships?.['institutional-authors']?.map((a) => authorMap[a.id]) || [],
+            departments: item.relationships?.['institutional-departments']?.map((d) => departmentMap[d.id]) || [],
+        }));
 
         res.json(results);
     } catch (err) {
-        console.error("Error fetching data:", err);
-        res.status(500).json({ message: "Error fetching data" });
+        console.error("Error during API call:", err.message);
+        res.status(500).json({ message: "Error fetching suggestions. Please try again later." });
     }
 });
 

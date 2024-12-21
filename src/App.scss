@@ -1,6 +1,7 @@
 /* colors */
 $primary-blue: #f0f0f0;
 $secondary-blue: #e0e0e0;
+$header-blue: #0021A5; // Correct UF Blue
 $accent-green: #22884C;
 $button-bg: #0056b3;
 $button-hover: #003970;
@@ -17,7 +18,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  color: $accent-green;
+  color: $header-blue; // Update to UF Blue
 }
 
 p {

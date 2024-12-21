@@ -1,62 +1,62 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Dashboard.scss';
 
 const Dashboard = () => {
-    const [major, setMajor] = useState('');
-    const [interests, setInterests] = useState([]);
-    const [skills, setSkills] = useState([]);
+    const [fieldOfInterest, setFieldOfInterest] = useState('');
+    const [major, setMajor] = useState(''); // Decorative field
+    const [skills, setSkills] = useState(''); // Decorative field
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState([]);
+    const [error, setError] = useState('');
+    const [directoryVisible, setDirectoryVisible] = useState(false);
 
-    const interestsRef = useRef(null);
-    const skillsRef = useRef(null);
-
-    const [showInterestsDropdown, setShowInterestsDropdown] = useState(false);
-    const [showSkillsDropdown, setShowSkillsDropdown] = useState(false);
-
-    const handleInterestChange = (interest) => {
-        setInterests(prev => prev.includes(interest) ? prev.filter(i => i !== interest) : [...prev, interest]);
-    };
-
-    const handleSkillChange = (skill) => {
-        setSkills(prev => prev.includes(skill) ? prev.filter(s => s !== skill) : [...prev, skill]);
-    };
-
-    const handleOutsideClick = (e) => {
-        if (interestsRef.current && !interestsRef.current.contains(e.target)) {
-            setShowInterestsDropdown(false);
-        }
-        if (skillsRef.current && !skillsRef.current.contains(e.target)) {
-            setShowSkillsDropdown(false);
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener('mousedown', handleOutsideClick);
-        return () => document.removeEventListener('mousedown', handleOutsideClick);
-    }, []);
+    const departments = [
+        {
+            name: "The Herbert Wertheim UF Scripps Institute for Biomedical Innovation & Technology",
+            link: "https://wertheim.scripps.ufl.edu/departments/faculty-directory/",
+        },
+    ];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+        setResults([]);
+        setError('');
+        setDirectoryVisible(false);
+
         try {
             const response = await fetch('http://localhost:5001/search', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ major, interests, skills }),
+                body: JSON.stringify({ major: fieldOfInterest }),
             });
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+
             const data = await response.json();
-            setResults(data);
+
+            if (data.length === 0) {
+                setError('No results found. Try adjusting your preferences.');
+            } else {
+                setResults(data);
+            }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error fetching suggestions:', error);
+            setError('An error occurred while fetching suggestions. Please try again.');
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleFullDirectory = () => {
+        setDirectoryVisible(true);
+        setResults([]);
+        setError('');
     };
 
     return (
@@ -66,79 +66,101 @@ const Dashboard = () => {
                 <p>Explore opportunities tailored for you</p>
             </div>
 
-            <div className="trending">
-                <h2>Trending Searches</h2>
-                <ul>
-                    <li>Machine Learning in Healthcare</li>
-                    <li>AI-powered Biology Projects</li>
-                    <li>Writing Skills for Research Proposals</li>
-                </ul>
-            </div>
-
             <div className="suggestion-engine">
-                <h2>Get Personalized Suggestions</h2>
                 <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Field of Interest:</label>
+                        <input
+                            type="text"
+                            placeholder="e.g., Computer Science"
+                            value={fieldOfInterest}
+                            onChange={(e) => setFieldOfInterest(e.target.value)}
+                        />
+                    </div>
                     <div className="form-group">
                         <label>Major:</label>
                         <input
                             type="text"
-                            placeholder="e.g., Computer Science"
+                            placeholder="e.g., Medicine"
                             value={major}
                             onChange={(e) => setMajor(e.target.value)}
                         />
                     </div>
-                    <div className="form-group" ref={interestsRef}>
-                        <label onClick={() => setShowInterestsDropdown(!showInterestsDropdown)}>Interests:</label>
-                        {showInterestsDropdown && (
-                            <div className="dropdown-content">
-                                {["Machine Learning", "Artificial Intelligence", "Biotechnology", "Environmental Science", "Quantum Computing", "Cybersecurity", "Public Health", "Economics", "Astrophysics", "Psychology", "Digital Arts", "Philosophy", "Aerospace", "Music Technology", "Educational Technology", "Political Science", "Sports Science", "Entrepreneurship", "Marketing", "Robotics"].map(interest => (
-                                    <div key={interest} onClick={() => handleInterestChange(interest)}>
-                                        <label className="checkbox-label">
-                                            <input
-                                                type="checkbox"
-                                                checked={interests.includes(interest)}
-                                            />
-                                            {interest}
-                                        </label>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
+                    <div className="form-group">
+                        <label>Skills:</label>
+                        <input
+                            type="text"
+                            placeholder="e.g., Machine Learning, AI"
+                            value={skills}
+                            onChange={(e) => setSkills(e.target.value)}
+                        />
                     </div>
-                    <div className="form-group" ref={skillsRef}>
-                        <label onClick={() => setShowSkillsDropdown(!showSkillsDropdown)}>Skills Interested In:</label>
-                        {showSkillsDropdown && (
-                            <div className="dropdown-content">
-                                {["Programming", "Statistical Analysis", "Machine Learning", "Web Development", "Project Management", "Clinical Research", "Electrical Engineering", "3D Modeling", "Quantitative Analysis", "Public Speaking"].map(skill => (
-                                    <div key={skill} onClick={() => handleSkillChange(skill)}>
-                                        <label className="checkbox-label">
-                                            <input
-                                                type="checkbox"
-                                                checked={skills.includes(skill)}
-                                            />
-                                            {skill}
-                                        </label>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-
-                    <button type="submit" className="get-suggestions">{loading ? 'Loading...' : 'Get Suggestions'}</button>
+                    <button type="submit" className="get-suggestions">
+                        {loading ? 'Loading...' : 'Get Suggestions'}
+                    </button>
+                    <button
+                        type="button"
+                        className="directory-button"
+                        onClick={handleFullDirectory}
+                    >
+                        View Full Directory
+                    </button>
+                    <Link to="/tips">
+                        <button className="contact-button">
+                            How to Cold Contact
+                        </button>
+                    </Link>
                 </form>
-                <button className="directory-button">View Full Directory</button>
             </div>
 
+            {directoryVisible && (
+                <div className="directory-section">
+                    <h2>Departments</h2>
+                    <ul className="directory-list">
+                        {departments.map((dept, index) => (
+                            <li key={index}>
+                                <a
+                                    href={dept.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {dept.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+
+            {error && <div className="results-section"><p className="no-results">{error}</p></div>}
+
             {results.length > 0 && (
-                <div className="results-section">
+                <div className="results-section" style={{ maxHeight: '400px', overflowY: 'scroll' }}>
                     <h2>Results</h2>
-                    {results.map((result, index) => (
-                        <div key={index} className="result-item">
-                            <h3>{result.title}</h3>
-                            <p>Authors: {result.authors.join(", ")}</p>
-                            <p>Departments: {result.departments.join(", ")}</p>
-                        </div>
-                    ))}
+                    <ul className="compact-results">
+                        {results.map((result, index) => (
+                            <li key={index}>
+                                <strong>{result.title}</strong>
+                                <br />
+                                <small>
+                                    {result.authors.map((author, i) => (
+                                        <span key={i}>
+                                            <a
+                                                href={`https://www.google.com/search?q=${encodeURIComponent(
+                                                    `${author} UF`
+                                                )}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {author}
+                                            </a>
+                                            {i < result.authors.length - 1 && ', '}
+                                        </span>
+                                    ))}
+                                </small>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             )}
         </div>

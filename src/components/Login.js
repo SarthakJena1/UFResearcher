@@ -29,11 +29,11 @@ function Login() {
             });
 
             const data = await response.json();
-            console.log('Login Response:', data);
 
             if (!response.ok) {
                 setError(data.message || 'Failed to log in.');
             } else {
+                localStorage.setItem('username', username);
                 setMessage('Login successful!');
                 navigate('/dashboard'); // Immediate redirect to Dashboard
             }

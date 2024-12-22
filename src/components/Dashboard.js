@@ -90,31 +90,84 @@ const Dashboard = () => {
     const showMoreResults = async () => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:5001/search', {
+            let page = currentPage + 1;
+            let foundResults = false;
+            const maxPage = 30
+            while (!foundResults && page <= maxPage) {
+                const response = await fetch('http://localhost:5001/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        major,
+                        interests: fieldOfInterest ? [fieldOfInterest] : [],
+                        page: currentPage + 1
+                    }),
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                if (data.results?.length > 0) {
+                    const newResults = data.results;
+                    const filteredNewResults = fieldOfInterest
+                        ? newResults.filter((result) =>
+                            Array.isArray(result.fields) && result.fields.includes(fieldOfInterest)
+                        )
+                        : newResults;
+
+                    if (filteredNewResults.length > 0) {
+                        setAllResults([...allResults, ...newResults]);
+                        setFilteredResults([...filteredResults, ...filteredNewResults]);
+                        setCurrentPage(page);
+                        foundResults = true;
+                    } else {
+                        page++;
+                    }
+                } else {
+                    page++;
+                }
+            }
+            if (!foundResults) {
+                setError('No more results found.');
+            }
+            if (page > maxPage) {
+                setError('Reached maximum number of pages. No more results.');
+            }
+        } catch (error) {
+            console.error('Error fetching suggestions:', error);
+            setError('An error occurred while fetching suggestions. Please try again.');
+            }
+        finally {
+            setLoading(false);
+            }
+        }
+    const saveArticles = async (article) => {
+        try {
+            const loggedUser = localStorage.getItem("username");
+            if (!loggedUser) {
+                alert("Please login to save articles");
+                return;
+            }
+            const response = await fetch('http://localhost:5001/save-article', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ major, interests: fieldOfInterest ? [fieldOfInterest] : [], page: currentPage + 1 }),
+                body: JSON.stringify({username: loggedUser, article}),
             });
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
             const data = await response.json();
-            if (data.results?.length > 0) {
-                setAllResults((prevResults) => [...prevResults, ...data.results]);
-                setFilteredResults((prevResults) => [...prevResults, ...data.results]);
-                setCurrentPage((prevPage) => prevPage + 1);
+            if (response.ok) {
+                alert("Article saved successfully");
             }
+            else {
+                alert(data.message);
+            }
+        } catch (error) {
+            alert("Error saving article");
         }
-        catch (error) {
-            console.error('Error fetching suggestions:', error);
-            setError('An error occurred while fetching suggestions. Please try again.');
-        }
-        finally {
-            setLoading(false);
-        }
-    }
+    };
 
     return (
         <div className="dashboard">
@@ -149,15 +202,15 @@ const Dashboard = () => {
                             ))}
                         </select>
                     </div>
-                    <div className="form-group">
-                        <label>Skills:</label>
-                        <input
-                            type="text"
-                            placeholder="e.g., Machine Learning, AI"
-                            value={skills}
-                            onChange={(e) => setSkills(e.target.value)}
-                        />
-                    </div>
+                    {/*<div className="form-group">*/}
+                    {/*    <label>Skills:</label>*/}
+                    {/*    <input*/}
+                    {/*        type="text"*/}
+                    {/*        placeholder="e.g., Machine Learning, AI"*/}
+                    {/*        value={skills}*/}
+                    {/*        onChange={(e) => setSkills(e.target.value)}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
                     <button type="submit" className="get-suggestions">
                         {loading ? 'Loading...' : 'Get Suggestions'}
                     </button>
@@ -171,6 +224,11 @@ const Dashboard = () => {
                     <Link to="/tips">
                         <button className="contact-button">
                             How to Cold Contact
+                        </button>
+                    </Link>
+                    <Link to="/saved-articles">
+                        <button className="contact-button">
+                            Saved Articles
                         </button>
                     </Link>
                 </form>
@@ -205,6 +263,10 @@ const Dashboard = () => {
                             <li key={index}>
                                 <strong>{result.title}</strong>
                                 <br />
+                                <strong style={{color: "#003C7E", fontSize: "medium"}}>
+                                    Fields: {result.fields?.length > 0 ? result.fields.join(', ') : 'N/A'}
+                                </strong>
+                                <br />
                                 <small>
                                     {result.authors.map((author, i) => (
                                         <span key={i}>
@@ -221,11 +283,13 @@ const Dashboard = () => {
                                         </span>
                                     ))}
                                 </small>
+                                <br />
+                                <button onClick={() => saveArticles(result)}>Save</button>
                             </li>
                         ))}
                     </ul>
                     <button style={{ color: "white"}} onClick={showMoreResults} disabled={loading} className="directory-button">
-                        {loading ? 'Loading...' : 'View More'}
+                        {loading ? 'Searching pages...' : 'View More'}
                     </button>
                 </div>
             )}

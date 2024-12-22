@@ -6,7 +6,6 @@ import mongoose from 'mongoose';
 import crypto from 'crypto';
 import fetch from 'node-fetch';
 import nodemailer from 'nodemailer';
-import fs from 'fs';
 
 const app = express();
 const apiKey = '078fc03a4fca4bbfb9b852bdf080234d';
@@ -35,7 +34,15 @@ const userSchema = new mongoose.Schema({
     username: { type: String, unique: true, required: true },
     password: { type: String, required: true },
     verified: { type: Boolean, default: false },
-    verificationToken: { type: String }
+    verificationToken: { type: String },
+    savedArticles: [
+        {
+            title: String,
+            authors: [String],
+            departments: [String],
+            fields: [String]
+        },
+    ]
 });
 
 const User = mongoose.model('User', userSchema);
@@ -166,6 +173,33 @@ app.post("/login", async (req, res) => {
     }
 });
 
+// Saved Information
+app.post("/save-article", async (req, res) => {
+    const { username, article } = req.body;
+    try {
+        if (!username || !article) return res.status(400).json({message: "Username and article are required"});
+        const user = await User.findOne({username});
+        if (!user) return res.status(400).json({message: "User not found"});
+        user.savedArticles.push(article);
+        await user.save();
+        res.json({message: "Article saved successfully"});
+    }
+    catch (error) {
+        res.status(500).json({message: "Error saving article"});
+    }
+});
+
+app.get("/saved-articles", async (req, res) => {
+    const { username } = req.query;
+    try {
+        const user = await User.findOne({username});
+        if (!user) return res.status(400).json({message: "User not found"});
+        res.json(user.savedArticles);
+    }
+    catch (error) {
+        res.status(500).json({message: "Error fetching saved articles"});
+    }
+});
 // Search Route
 app.post("/search", async (req, res) => {
     const { major, interests = [], page = 1 } = req.body;

@@ -167,7 +167,7 @@ app.post("/login", async (req, res) => {
         }
         if (!user.verified) return res.status(400).json({ message: "Account not verified." });
         const token = jwt.sign({ username }, "secretkey", { expiresIn: "1h" });
-        res.json({ token });
+        res.json({ username: user.username, token });
     } catch (err) {
         res.status(500).json({ message: "Error logging in" });
     }
@@ -176,28 +176,76 @@ app.post("/login", async (req, res) => {
 // Saved Information
 app.post("/save-article", async (req, res) => {
     const { username, article } = req.body;
+    console.log("Request body:", req.body);
     try {
-        if (!username || !article) return res.status(400).json({message: "Username and article are required"});
+        if (!username || !article) {
+            console.log("Missing username or article");
+            return res.status(400).json({message: "Username and article are required"});
+        }
         const user = await User.findOne({username});
-        if (!user) return res.status(400).json({message: "User not found"});
+        if (!user) {
+            console.log("User not found:", username);
+            return res.status(400).json({message: "User not found"});
+        }
+        // Check if article already saved
+        const exists = user.savedArticles.some((savedArticle) => savedArticle.title === article.title);
+        if (exists) {
+            console.log("Article already saved:", article.title);
+            return res.status(400).json({message: "Article already saved"});
+        }
         user.savedArticles.push(article);
         await user.save();
         res.json({message: "Article saved successfully"});
     }
     catch (error) {
+        console.error("Error saving article:", error.message);
         res.status(500).json({message: "Error saving article"});
     }
 });
 
 app.get("/saved-articles", async (req, res) => {
     const { username } = req.query;
+    console.log("Fetching saved articles for:", username);
     try {
         const user = await User.findOne({username});
-        if (!user) return res.status(400).json({message: "User not found"});
-        res.json(user.savedArticles);
+        if (!user) {
+            console.log("User not found:", username);
+            return res.status(400).json({message: "User not found"});
+        }
+        console.log("Saved articles:", user.savedArticles);
+        res.json(user.savedArticles || []);
     }
     catch (error) {
+        console.error("Error fetching saved articles:", error);
         res.status(500).json({message: "Error fetching saved articles"});
+    }
+});
+
+app.delete("/unsave-article", async (req, res) => {
+    const { username, articleTitle } = req.body;
+
+    try {
+        if (!username || !articleTitle) {
+            console.log("Missing username or article title");
+            return res.status(400).json({message: "Username and article title are required"});
+        }
+        const user = await User.findOne({username});
+        if (!user) {
+            console.log("User not found:", username);
+            return res.status(400).json({message: "User not found"});
+        }
+        const initLength = user.savedArticles.length;
+        user.savedArticles = user.savedArticles.filter((article) => article.title !== articleTitle);
+        if (user.savedArticles.length === initLength) {
+            console.log("Article not found:", articleTitle);
+            return res.status(400).json({message: "Article not found"});
+        }
+        await user.save();
+        res.json({message: "Article removed successfully"});
+    }
+    catch (error) {
+        console.error("Error removing article:", error.message);
+        res.status(500).json({message: "Error removing article"});
     }
 });
 // Search Route

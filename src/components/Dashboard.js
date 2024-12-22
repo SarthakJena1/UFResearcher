@@ -146,6 +146,7 @@ const Dashboard = () => {
     const saveArticles = async (article) => {
         try {
             const loggedUser = localStorage.getItem("username");
+            console.log("logged in user", loggedUser);
             if (!loggedUser) {
                 alert("Please login to save articles");
                 return;
@@ -262,11 +263,15 @@ const Dashboard = () => {
                         {filteredResults.map((result, index) => (
                             <li key={index}>
                                 <strong>{result.title}</strong>
-                                <br />
-                                <strong style={{color: "#003C7E", fontSize: "medium"}}>
+                                <br/>
+                                <strong style={{color: "#003C7E"}}>
                                     Fields: {result.fields?.length > 0 ? result.fields.join(', ') : 'N/A'}
                                 </strong>
-                                <br />
+                                <br/>
+                                <strong
+                                    style={{color: "#003C7E"}}>Departments: {result.fields?.length > 0 ? result.departments.join(', ') : 'N/A'}</strong>
+                                <br/>
+                                <strong style={{color: "#003C7E"}}>Authors: </strong>
                                 <small>
                                     {result.authors.map((author, i) => (
                                         <span key={i}>
@@ -283,12 +288,18 @@ const Dashboard = () => {
                                         </span>
                                     ))}
                                 </small>
-                                <br />
-                                <button onClick={() => saveArticles(result)}>Save</button>
+                                <br/>
+                                <span
+                                    className="ribbon save"
+                                    onClick={() => saveArticles(result)}
+                                    title="Save Article"
+                                >
+                                    Save ★
+                                </span>
                             </li>
                         ))}
                     </ul>
-                    <button style={{ color: "white"}} onClick={showMoreResults} disabled={loading} className="directory-button">
+                    <button style={{color: "white"}} onClick={showMoreResults} disabled={loading} className="directory-button">
                         {loading ? 'Searching pages...' : 'View More'}
                     </button>
                 </div>

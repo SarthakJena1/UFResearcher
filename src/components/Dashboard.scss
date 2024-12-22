@@ -86,12 +86,14 @@
 
   .results-section {
     margin-top: 20px;
-    max-height: 400px;
+    max-height: 800px;
     overflow-y: scroll;
+
 
     h2 {
       margin-bottom: 10px;
     }
+
 
     .compact-results {
       list-style: none;
@@ -111,6 +113,11 @@
 
         small {
           color: #555; // light/subtle gray for authors
+        }
+        .ribbon.save {
+            color: #4caeff;
+            cursor: pointer;
+            font-weight: bold;
         }
       }
     }

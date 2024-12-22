@@ -33,7 +33,7 @@ function Login() {
             if (!response.ok) {
                 setError(data.message || 'Failed to log in.');
             } else {
-                localStorage.setItem('username', username);
+                localStorage.setItem('username', data.username);
                 setMessage('Login successful!');
                 navigate('/dashboard'); // Immediate redirect to Dashboard
             }

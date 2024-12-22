@@ -4,11 +4,14 @@ import './Dashboard.scss';
 
 const Dashboard = () => {
     const [fieldOfInterest, setFieldOfInterest] = useState('');
-    const [major, setMajor] = useState(''); // Decorative field
-    const [skills, setSkills] = useState(''); // Decorative field
+    const [fieldOptions, setFieldOptions] = useState([]);
+    const [major, setMajor] = useState('');
+    const [skills, setSkills] = useState('');
     const [loading, setLoading] = useState(false);
-    const [results, setResults] = useState([]);
+    const [allResults, setAllResults] = useState([]);
+    const [filteredResults, setFilteredResults] = useState([]);
     const [error, setError] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
     const [directoryVisible, setDirectoryVisible] = useState(false);
 
     const departments = [
@@ -21,7 +24,9 @@ const Dashboard = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setResults([]);
+        setAllResults([]);
+        setFilteredResults([]);
+        setCurrentPage(1);
         setError('');
         setDirectoryVisible(false);
 
@@ -31,7 +36,7 @@ const Dashboard = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ major: fieldOfInterest }),
+                body: JSON.stringify({ major, interests: fieldOfInterest ? [fieldOfInterest] : [], page: 1 }),
             });
 
             if (!response.ok) {
@@ -40,10 +45,18 @@ const Dashboard = () => {
 
             const data = await response.json();
 
-            if (data.length === 0) {
+            if (data.fieldsOfInterest?.length > 0) {
+                setFieldOptions(data.fieldsOfInterest);
+            }
+            else {
+                setFieldOptions([]);
+            }
+
+            if (data.results?.length === 0) {
                 setError('No results found. Try adjusting your preferences.');
             } else {
-                setResults(data);
+                setAllResults(data.results);
+                setFilteredResults(data.results);
             }
         } catch (error) {
             console.error('Error fetching suggestions:', error);
@@ -55,9 +68,53 @@ const Dashboard = () => {
 
     const handleFullDirectory = () => {
         setDirectoryVisible(true);
-        setResults([]);
+        setAllResults([]);
         setError('');
     };
+
+    const handleFilters = (e) => {
+        const selectedField = e.target.value;
+        setFieldOfInterest(selectedField);
+
+        if (selectedField) {
+            const filtered = allResults.filter((result) =>
+                Array.isArray(result.fields) && result.fields.includes(selectedField)
+            );
+            setFilteredResults(filtered);
+        }
+        else {
+            setFilteredResults(allResults);
+        }
+    }
+
+    const showMoreResults = async () => {
+        setLoading(true);
+        try {
+            const response = await fetch('http://localhost:5001/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ major, interests: fieldOfInterest ? [fieldOfInterest] : [], page: currentPage + 1 }),
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            if (data.results?.length > 0) {
+                setAllResults((prevResults) => [...prevResults, ...data.results]);
+                setFilteredResults((prevResults) => [...prevResults, ...data.results]);
+                setCurrentPage((prevPage) => prevPage + 1);
+            }
+        }
+        catch (error) {
+            console.error('Error fetching suggestions:', error);
+            setError('An error occurred while fetching suggestions. Please try again.');
+        }
+        finally {
+            setLoading(false);
+        }
+    }
 
     return (
         <div className="dashboard">
@@ -69,22 +126,28 @@ const Dashboard = () => {
             <div className="suggestion-engine">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label>Field of Interest:</label>
-                        <input
-                            type="text"
-                            placeholder="e.g., Computer Science"
-                            value={fieldOfInterest}
-                            onChange={(e) => setFieldOfInterest(e.target.value)}
-                        />
-                    </div>
-                    <div className="form-group">
                         <label>Major:</label>
                         <input
                             type="text"
-                            placeholder="e.g., Medicine"
+                            placeholder="e.g., Computer Science"
                             value={major}
                             onChange={(e) => setMajor(e.target.value)}
                         />
+                    </div>
+                    <div className="form-group">
+                        <label>Field of Interest:</label>
+                        <select
+                            value={fieldOfInterest}
+                            onChange={handleFilters}
+                            // disabled={fieldOptions.length === 0}
+                        >
+                            <option value="">Select a field</option>
+                            {fieldOptions.map((field) => (
+                                <option key={field.id} value={field.name}>
+                                    {field.name}
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div className="form-group">
                         <label>Skills:</label>
@@ -134,11 +197,11 @@ const Dashboard = () => {
 
             {error && <div className="results-section"><p className="no-results">{error}</p></div>}
 
-            {results.length > 0 && (
+            {filteredResults.length > 0 && (
                 <div className="results-section" style={{ maxHeight: '400px', overflowY: 'scroll' }}>
                     <h2>Results</h2>
                     <ul className="compact-results">
-                        {results.map((result, index) => (
+                        {filteredResults.map((result, index) => (
                             <li key={index}>
                                 <strong>{result.title}</strong>
                                 <br />
@@ -161,6 +224,9 @@ const Dashboard = () => {
                             </li>
                         ))}
                     </ul>
+                    <button style={{ color: "white"}} onClick={showMoreResults} disabled={loading} className="directory-button">
+                        {loading ? 'Loading...' : 'View More'}
+                    </button>
                 </div>
             )}
         </div>

@@ -10,10 +10,6 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <div id="stars"></div>
-                <div id="stars2"></div>
-                <div id="stars3"></div>
-
                 <Routes>
                     <Route path="/" element={<Login />} />
                     <Route path="/dashboard" element={<Dashboard />} />

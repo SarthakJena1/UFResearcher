@@ -19,6 +19,13 @@ const Tips = () => {
                     <li><strong>Follow Up:</strong> Send a polite follow-up if you don't hear back after a week.</li>
                 </ul>
                 <p>Respect their time and show genuine interest in their work!</p>
+                <button
+                    className="back-button"
+                    onClick={() => window.history.back()}
+                    style={{ color: "white"}}
+                >
+                    Back to Dashboard
+                </button>
             </div>
         </div>
     );

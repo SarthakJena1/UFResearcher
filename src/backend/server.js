@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 import crypto from 'crypto';
 import fetch from 'node-fetch';
 import nodemailer from 'nodemailer';
+import fs from 'fs';
 
 const app = express();
 const apiKey = '078fc03a4fca4bbfb9b852bdf080234d';
@@ -93,7 +94,17 @@ function getDepartments(data) {
     return departments;
 }
 
-// Routes
+function getFieldOfResearch(data) {
+    const fields = {};
+    data.forEach((item) => {
+        if (item.type === 'field-of-research') {
+            fields[item.id] = item.attributes.name;
+        }
+    });
+    return fields;
+}
+
+/// Routes
 
 // Register
 app.post("/register", async (req, res) => {
@@ -157,17 +168,17 @@ app.post("/login", async (req, res) => {
 
 // Search Route
 app.post("/search", async (req, res) => {
-    const { major, interests = [] } = req.body;
+    const { major, interests = [], page = 1 } = req.body;
     try {
-        const q = `${major} ${interests.join(" ")}`.trim();
-        const timeframe = '1y';
+        const q = major;
+        const timeframe = 'at';
         const type = 'article';
         const pages = 20; // Display top 20 results
 
         const url = createRequestURL({ q, timeframe, type, pages });
         console.log("Generated URL:", url); // Debugging purpose
 
-        const response = await fetch(url);
+        const response = await fetch(`${url}&page[number]=${page}`);
         const data = await response.json();
 
         if (!data || !data.data) {
@@ -177,14 +188,17 @@ app.post("/search", async (req, res) => {
 
         const authorMap = getAuthors(data.included || []);
         const departmentMap = getDepartments(data.included || []);
+        const fieldMap = getFieldOfResearch(data.included || []);
+
+        const fieldsOfInterest = Object.entries(fieldMap).map(([id, name]) => ({ id, name }));
 
         const results = data.data.map((item) => ({
             title: item.attributes?.title || 'N/A',
             authors: item.relationships?.['institutional-authors']?.map((a) => authorMap[a.id]) || [],
             departments: item.relationships?.['institutional-departments']?.map((d) => departmentMap[d.id]) || [],
+            fields: item.relationships?.['fields-of-research']?.map((f) => fieldMap[f.id]) || [],
         }));
-
-        res.json(results);
+        res.json({results, fieldsOfInterest});
     } catch (err) {
         console.error("Error during API call:", err.message);
         res.status(500).json({ message: "Error fetching suggestions. Please try again later." });

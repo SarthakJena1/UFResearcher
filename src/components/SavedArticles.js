@@ -76,7 +76,7 @@ return (
                                 {article.authors.map((author, i) => (
                                     <a
                                         key={i}
-                                        href={`https://www.google.com/search?q=${encodeURIComponent(author)}`}
+                                        href={`https://www.google.com/search?q=${encodeURIComponent(author)} UF`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="author-link"

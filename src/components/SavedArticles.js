@@ -11,7 +11,8 @@ const SavedArticles = () => {
                 const response = await fetch(`http://localhost:5001/saved-articles?username=${loggedUser}`);
                 const data = await response.json();
                 if (response.ok) {
-                    setArticles(data);
+                    const sortedArticles = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    setArticles(sortedArticles);
                 }
                 else {
                     console.log("Error from server:", data.message);
@@ -62,6 +63,10 @@ return (
                     {articles.map((article, index) => (
                         <div key={index} className="article-item">
                             <strong className="article-title">{article.title}</strong>
+                            <br />
+                            <span className="article-details">
+                                <strong>Date Published:</strong> {article.date}
+                            </span>
                             <br />
                             <span className="article-details">
                                 <strong>Fields:</strong> {article.fields?.length > 0 ? article.fields.join(", ") : "N/A"}

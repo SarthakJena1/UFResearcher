@@ -38,6 +38,7 @@ const userSchema = new mongoose.Schema({
     savedArticles: [
         {
             title: String,
+            date: String,
             authors: [String],
             departments: [String],
             fields: [String]
@@ -110,6 +111,7 @@ function getFieldOfResearch(data) {
     });
     return fields;
 }
+
 
 /// Routes
 
@@ -276,6 +278,7 @@ app.post("/search", async (req, res) => {
 
         const results = data.data.map((item) => ({
             title: item.attributes?.title || 'N/A',
+            date: item.attributes?.['publication-date'] || 'N/A',
             authors: item.relationships?.['institutional-authors']?.map((a) => authorMap[a.id]) || [],
             departments: item.relationships?.['institutional-departments']?.map((d) => departmentMap[d.id]) || [],
             fields: item.relationships?.['fields-of-research']?.map((f) => fieldMap[f.id]) || [],

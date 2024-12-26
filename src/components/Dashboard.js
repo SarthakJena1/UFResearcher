@@ -6,7 +6,7 @@ const Dashboard = () => {
     const [fieldOfInterest, setFieldOfInterest] = useState('');
     const [fieldOptions, setFieldOptions] = useState([]);
     const [major, setMajor] = useState('');
-    const [skills, setSkills] = useState('');
+    // const [skills, setSkills] = useState('');
     const [loading, setLoading] = useState(false);
     const [allResults, setAllResults] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
@@ -23,6 +23,10 @@ const Dashboard = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!major.trim()) {
+            setError('Please enter a major.');
+            return;
+        }
         setLoading(true);
         setAllResults([]);
         setFilteredResults([]);
@@ -193,7 +197,7 @@ const Dashboard = () => {
                         <select
                             value={fieldOfInterest}
                             onChange={handleFilters}
-                            // disabled={fieldOptions.length === 0}
+                            disabled={fieldOptions.length === 0}
                         >
                             <option value="">Select a field</option>
                             {fieldOptions.map((field) => (
@@ -263,6 +267,10 @@ const Dashboard = () => {
                         {filteredResults.map((result, index) => (
                             <li key={index}>
                                 <strong>{result.title}</strong>
+                                <br/>
+                                <strong style={{color: "#003C7E"}}>
+                                    Date Published: {result.date}
+                                </strong>
                                 <br/>
                                 <strong style={{color: "#003C7E"}}>
                                     Fields: {result.fields?.length > 0 ? result.fields.join(', ') : 'N/A'}

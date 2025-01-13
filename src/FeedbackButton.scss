@@ -1,0 +1,77 @@
+.feedback-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensures it is above other content */
+}
+
+.feedback-button {
+    background-color: #00529b; /* UF Blue */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.feedback-button:hover {
+    background-color: #003c7e; /* Darker UF Blue */
+}
+
+.feedback-modal {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+.feedback-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-modal textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.feedback-modal button {
+    margin-top: 5px;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback-modal button[type="submit"] {
+    background-color: #00529b; /* UF Blue */
+    color: white;
+}
+
+.feedback-modal button[type="submit"]:hover {
+    background-color: #003c7e; /* Darker UF Blue */
+}
+
+.feedback-modal button[type="button"] {
+    background-color: #ccc;
+    color: black;
+}
+
+.feedback-modal button[type="button"]:hover {
+    background-color: #bbb;
+}

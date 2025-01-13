@@ -62,7 +62,16 @@ return (
                 <div className="articles-list">
                     {articles.map((article, index) => (
                         <div key={index} className="article-item">
-                            <strong className="article-title">{article.title}</strong>
+                            <strong className="article-title">
+                                <a
+                                    href={`https://www.google.com/search?q=${article.title}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+
+                                >
+                                    {article.title}
+                                </a>
+                            </strong>
                             <br />
                             <span className="article-details">
                                 <strong>Date Published:</strong> {article.date}
@@ -106,7 +115,7 @@ return (
             )}
             <button
                 className="back-button"
-                onClick={() => window.history.back()}
+                onClick={() => window.location.assign("/dashboard")}
                 style={{ color: "white" }}
             >
                 Back to Dashboard

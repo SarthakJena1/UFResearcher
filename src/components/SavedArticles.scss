@@ -6,6 +6,7 @@
         color: #003C7E;
     }
 
+
     .articles-list {
         display: flex;
         flex-direction: column;
@@ -26,9 +27,13 @@
         background-color: #f9f9f9;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-        .article-title {
+        .article-title a {
             font-size: 18px;
             color: #0021A5;
+            text-decoration: none;
+        }
+        .article-title a:hover {
+            text-decoration: underline;
         }
 
         .article-details {
@@ -49,6 +54,7 @@
             font-weight: bold;
             display: inline-block;
         }
+
     }
 
     .back-button {

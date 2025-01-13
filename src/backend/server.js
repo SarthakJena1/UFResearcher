@@ -45,8 +45,13 @@ const userSchema = new mongoose.Schema({
         },
     ]
 });
+// Feedback Schema
+const feedbackSchema = new mongoose.Schema({
+    feedback: { type: String, required: true }
+});
 
 const User = mongoose.model('User', userSchema);
+const FeedbackModel = mongoose.model('Feedback', feedbackSchema);
 
 // Verification transporter
 const transporter = nodemailer.createTransport({
@@ -207,14 +212,12 @@ app.post("/save-article", async (req, res) => {
 
 app.get("/saved-articles", async (req, res) => {
     const { username } = req.query;
-    console.log("Fetching saved articles for:", username);
     try {
         const user = await User.findOne({username});
         if (!user) {
             console.log("User not found:", username);
             return res.status(400).json({message: "User not found"});
         }
-        console.log("Saved articles:", user.savedArticles);
         res.json(user.savedArticles || []);
     }
     catch (error) {
@@ -250,6 +253,19 @@ app.delete("/unsave-article", async (req, res) => {
         res.status(500).json({message: "Error removing article"});
     }
 });
+
+// Feedback
+app.post("/feedback", async (req, res) => {
+    const { feedback } = req.body;
+    try {
+        if (!feedback) return res.status(400).json({ message: "Feedback is required." });
+        await FeedbackModel.create({ feedback });
+        res.json({ message: "Feedback received successfully" });
+    } catch (err) {
+        console.error("Error sending feedback:", err.message);
+        res.status(500).json({ message: "Error sending feedback" });
+    }
+});
 // Search Route
 app.post("/search", async (req, res) => {
     const { major, interests = [], page = 1 } = req.body;
@@ -260,7 +276,6 @@ app.post("/search", async (req, res) => {
         const pages = 20; // Display top 20 results
 
         const url = createRequestURL({ q, timeframe, type, pages });
-        console.log("Generated URL:", url); // Debugging purpose
 
         const response = await fetch(`${url}&page[number]=${page}`);
         const data = await response.json();

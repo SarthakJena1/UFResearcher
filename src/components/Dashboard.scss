@@ -1,3 +1,19 @@
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .dashboard {
   font-family: Arial, sans-serif;
   background: #FAFAF8;
@@ -113,13 +129,23 @@
 
         small {
           color: #555; // light/subtle gray for authors
+          font-size: 14px;
         }
         .ribbon.save {
-            color: #4caeff;
+            color: #0021a5;
             cursor: pointer;
             font-weight: bold;
         }
       }
+      a {
+        text-decoration: none;
+        color: #0021A5;
+        font-weight: bold;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
     }
   }
 }

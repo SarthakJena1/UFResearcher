@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Dashboard.scss';
+
 
 const Dashboard = () => {
     const [fieldOfInterest, setFieldOfInterest] = useState('');
@@ -13,6 +14,7 @@ const Dashboard = () => {
     const [error, setError] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [directoryVisible, setDirectoryVisible] = useState(false);
+    const [fadeIn, setFadeIn] = useState(false);
 
     const departments = [
         {
@@ -20,6 +22,14 @@ const Dashboard = () => {
             link: "https://wertheim.scripps.ufl.edu/departments/faculty-directory/",
         },
     ];
+
+    useEffect(() => {
+        if (filteredResults.length > 0) {
+            setFadeIn(true);
+            const timer = setTimeout(() => setFadeIn(false), 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [filteredResults]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,6 +43,7 @@ const Dashboard = () => {
         setCurrentPage(1);
         setError('');
         setDirectoryVisible(false);
+        setFadeIn(false);
 
         try {
             const response = await fetch('http://localhost:5001/search', {
@@ -219,13 +230,13 @@ const Dashboard = () => {
                     <button type="submit" className="get-suggestions">
                         {loading ? 'Loading...' : 'Get Suggestions'}
                     </button>
-                    <button
-                        type="button"
-                        className="directory-button"
-                        onClick={handleFullDirectory}
-                    >
-                        View Full Directory
-                    </button>
+                    {/*<button*/}
+                    {/*    type="button"*/}
+                    {/*    className="directory-button"*/}
+                    {/*    onClick={handleFullDirectory}*/}
+                    {/*>*/}
+                    {/*    View Full Directory*/}
+                    {/*</button>*/}
                     <Link to="/tips">
                         <button className="contact-button">
                             How to Cold Contact
@@ -261,25 +272,34 @@ const Dashboard = () => {
             {error && <div className="results-section"><p className="no-results">{error}</p></div>}
 
             {filteredResults.length > 0 && (
-                <div className="results-section" style={{ maxHeight: '400px', overflowY: 'scroll' }}>
+                <div className={`results-section ${fadeIn ? 'fade-in' : ''}`} style={{ maxHeight: '400px', overflowY: 'scroll' }}>
                     <h2>Results</h2>
                     <ul className="compact-results">
                         {filteredResults.map((result, index) => (
                             <li key={index}>
-                                <strong>{result.title}</strong>
+                                <strong>
+                                    <a
+                                        href={`https://www.google.com/search?q=${result.title}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {result.title}
+                                    </a>
+                                    </strong>
                                 <br/>
-                                <strong style={{color: "#003C7E"}}>
-                                    Date Published: {result.date}
-                                </strong>
+                                <small>
+                                    <small style={{fontWeight: 'bold'}}>Date Published:</small> {result.date}
+                                </small>
                                 <br/>
-                                <strong style={{color: "#003C7E"}}>
-                                    Fields: {result.fields?.length > 0 ? result.fields.join(', ') : 'N/A'}
-                                </strong>
+                                <small>
+                                    <small style={{fontWeight: 'bold'}}>Fields:</small>  {result.fields?.length > 0 ? result.fields.join(', ') : 'N/A'}
+                                </small>
                                 <br/>
-                                <strong
-                                    style={{color: "#003C7E"}}>Departments: {result.fields?.length > 0 ? result.departments.join(', ') : 'N/A'}</strong>
+                                <small>
+                                    <small style={{fontWeight: 'bold'}}>Departments:</small> {result.fields?.length > 0 ? result.departments.join(', ') : 'N/A'}
+                                </small>
                                 <br/>
-                                <strong style={{color: "#003C7E"}}>Authors: </strong>
+                                <small style={{fontWeight: 'bold'}}>Authors: </small>
                                 <small>
                                     {result.authors.map((author, i) => (
                                         <span key={i}>
@@ -302,7 +322,7 @@ const Dashboard = () => {
                                     onClick={() => saveArticles(result)}
                                     title="Save Article"
                                 >
-                                    Save ★
+                                    Save <span>&#128278;</span>
                                 </span>
                             </li>
                         ))}

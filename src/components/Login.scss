@@ -9,6 +9,7 @@ $header-blue: #0021A5; // UF Blue for headers
 // Fonts
 $font-stack: 'Arial', sans-serif;
 
+
 // Body and Page Setup
 .login-page {
   margin: 0;
@@ -91,6 +92,7 @@ $font-stack: 'Arial', sans-serif;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
+      animation: fadeIn 1s ease-in-out;
 
       &:hover {
         background-color: $button-hover;

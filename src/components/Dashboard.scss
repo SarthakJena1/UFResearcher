@@ -88,6 +88,8 @@
         }
       }
 
+
+
       &.contact-button {
         background: #00529B; // uf blue
         color: #FFF;
@@ -99,6 +101,30 @@
       }
     }
   }
+  .directory-section {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 400px;
+      overflow-y: scroll;
+    }
+  }
+
+
+    .directory-link {
+        text-decoration: none;
+        color: #0021A5;
+      }
+    .directory-link:hover {
+      text-decoration: underline;
+      color: #FF6600;
+    }
 
   .results-section {
     margin-top: 20px;

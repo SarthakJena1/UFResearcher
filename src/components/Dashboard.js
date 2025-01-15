@@ -17,11 +17,127 @@ const Dashboard = () => {
     const [fadeIn, setFadeIn] = useState(false);
 
     const departments = [
-        {
-            name: "The Herbert Wertheim UF Scripps Institute for Biomedical Innovation & Technology",
-            link: "https://wertheim.scripps.ufl.edu/departments/faculty-directory/",
-        },
-    ];
+    {
+        name: "Accounting",
+        link: "https://warrington.ufl.edu/about/fisher/",
+    },
+    {
+        name: "Advertising",
+        link: "https://www.jou.ufl.edu/current-students/current-undergraduate/current-academics/current-advertising/",
+    },
+    {
+        name: "African Studies",
+        link: "https://africa.ufl.edu/",
+    },
+    {
+        name: "Agricultural and Biological Engineering",
+        link: "https://abe.ufl.edu/",
+    },
+    {
+        name: "Agricultural Education and Communication",
+        link: "https://aec.ifas.ufl.edu/",
+    },
+    {
+        name: "Agronomy",
+        link: "https://agronomy.ifas.ufl.edu/",
+    },
+    {
+        name: "Animal Sciences",
+        link: "https://animal.ifas.ufl.edu/",
+    },
+    {
+        name: "Anthropology",
+        link: "https://anthro.ufl.edu/about-us/department-subfields/",
+    },
+    {
+        name: "Applied Physiology and Kinesiology",
+        link: "http://hhp.ufl.edu/about/departments/apk/",
+    },
+    {
+        name: "Architecture",
+        link: "https://dcp.ufl.edu/architecture/",
+    },
+    {
+        name: "Art + Art History",
+        link: "https://arts.ufl.edu/academics/art-and-art-history/",
+    },
+    {
+        name: "Astronomy",
+        link: "https://www.astro.ufl.edu/",
+    },
+    {
+        name: "Biology",
+        link: "https://biology.ufl.edu/",
+    },
+    {
+        name: "Biomedical Engineering",
+        link: "https://www.bme.ufl.edu/",
+    },
+    {
+        name: "Chemical Engineering",
+        link: "https://www.che.ufl.edu/",
+    },
+    {
+        name: "Chemistry",
+        link: "https://www.chem.ufl.edu/",
+    },
+    {
+        name: "Civil and Coastal Engineering",
+        link: "https://www.essie.ufl.edu/civil-coastal-engineering/",
+    },
+    {
+        name: "Computer & Information Science & Engineering",
+        link: "https://www.cise.ufl.edu/",
+    },
+    {
+        name: "Construction Management",
+        link: "https://dcp.ufl.edu/rinker/",
+    },
+    {
+        name: "Digital Worlds Institute",
+        link: "https://digitalworlds.ufl.edu/",
+    },
+    {
+        name: "Economics",
+        link: "https://economics.clas.ufl.edu/",
+    },
+    {
+        name: "Electrical and Computer Engineering",
+        link: "https://www.ece.ufl.edu/",
+    },
+    {
+        name: "Environmental Engineering Sciences",
+        link: "https://www.essie.ufl.edu/environmental-engineering-sciences/",
+    },
+    {
+        name: "Family, Youth, and Community Sciences",
+        link: "https://fycs.ifas.ufl.edu/",
+    },
+    {
+        name: "Food and Resource Economics",
+        link: "https://fred.ifas.ufl.edu/",
+    },
+    {
+        name: "Food Science and Human Nutrition",
+        link: "https://fshn.ifas.ufl.edu/",
+    },
+    {
+        name: "Forest, Fisheries, and Geomatics Sciences",
+        link: "http://sfrc.ufl.edu/",
+    },
+    {
+        name: "Gender, Sexuality, and Women’s Studies",
+        link: "http://wst.ufl.edu/",
+    },
+    {
+        name: "Geography",
+        link: "https://geog.ufl.edu/",
+    },
+    {
+        name: "Geological Sciences",
+        link: "http://geology.ufl.edu/",
+    },
+];
 
     useEffect(() => {
         if (filteredResults.length > 0) {
@@ -79,12 +195,6 @@ const Dashboard = () => {
         } finally {
             setLoading(false);
         }
-    };
-
-    const handleFullDirectory = () => {
-        setDirectoryVisible(true);
-        setAllResults([]);
-        setError('');
     };
 
     const handleFilters = (e) => {
@@ -230,13 +340,14 @@ const Dashboard = () => {
                     <button type="submit" className="get-suggestions">
                         {loading ? 'Loading...' : 'Get Suggestions'}
                     </button>
-                    {/*<button*/}
-                    {/*    type="button"*/}
-                    {/*    className="directory-button"*/}
-                    {/*    onClick={handleFullDirectory}*/}
-                    {/*>*/}
-                    {/*    View Full Directory*/}
-                    {/*</button>*/}
+
+                    <button
+                        type="button"
+                        className="directory-button"
+                        onClick={() => setDirectoryVisible(!directoryVisible)}
+                    >
+                        {directoryVisible ? 'Hide Departments' : 'Full Department Directory'}
+                    </button>
                     <Link to="/tips">
                         <button className="contact-button">
                             How to Cold Contact
@@ -251,7 +362,10 @@ const Dashboard = () => {
             </div>
 
             {directoryVisible && (
-                <div className="directory-section">
+                <div
+                    className={`directory-section ${directoryVisible ? 'visible' : ''}`}
+                    style={{overflowY: 'scroll'}}
+                >
                     <h2>Departments</h2>
                     <ul className="directory-list">
                         {departments.map((dept, index) => (
@@ -260,6 +374,7 @@ const Dashboard = () => {
                                     href={dept.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="directory-link"
                                 >
                                     {dept.name}
                                 </a>

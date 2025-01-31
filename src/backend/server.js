@@ -6,10 +6,11 @@ import mongoose from 'mongoose';
 import crypto from 'crypto';
 import fetch from 'node-fetch';
 import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
 
 const app = express();
-const apiKey = '078fc03a4fca4bbfb9b852bdf080234d';
-const apiSecret = 'e247f3052a21459bb31a329ebb2ceeff';
+const apiKey = process.env.API_KEY;
+const apiSecret = process.env.API_SECRET;
 
 // Middleware
 app.use(cors({
@@ -20,7 +21,7 @@ app.use(cors({
 app.use(express.json());
 
 // Connect to MongoDB Atlas
-const uri = "mongodb+srv://sarthakjena05:m7MqJULGGBm3ns8a@gatorresearch.g0l2t.mongodb.net/gatorresearch?retryWrites=true&w=majority&appName=GatorResearch";
+const uri = process.env.MONGO_URI;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("MongoDB Atlas connected successfully"))
@@ -57,8 +58,8 @@ const FeedbackModel = mongoose.model('Feedback', feedbackSchema);
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'gatorresearchtest@gmail.com',
-        pass: 'blka fcyl stql uhcr'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 

@@ -8,6 +8,7 @@ import fetch from 'node-fetch';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
 const apiKey = process.env.API_KEY;
 const apiSecret = process.env.API_SECRET;
@@ -22,6 +23,8 @@ app.use(express.json());
 
 // Connect to MongoDB Atlas
 const uri = process.env.MONGO_URI;
+console.log("Mongo URI:", uri);
+console.log(apiKey, apiSecret);
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("MongoDB Atlas connected successfully"))

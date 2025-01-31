@@ -8,7 +8,7 @@ const SavedArticles = () => {
             try {
                 const loggedUser = localStorage.getItem("username");
                 console.log("fetching saved articles for:", loggedUser);
-                const response = await fetch(`http://localhost:5001/saved-articles?username=${loggedUser}`);
+                const response = await fetch(`https://ufresearcherbackend.onrender.com/saved-articles?username=${loggedUser}`);
                 const data = await response.json();
                 if (response.ok) {
                     const sortedArticles = data.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -34,7 +34,7 @@ const SavedArticles = () => {
             return;
         }
         try {
-            const response = await fetch("http://localhost:5001/unsave-article", {
+            const response = await fetch("https://ufresearcherbackend.onrender.com/unsave-article", {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username: loggedUser, articleTitle }),

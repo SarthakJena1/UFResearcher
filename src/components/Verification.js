@@ -10,7 +10,7 @@ const VerifyEmail = () => {
     useEffect(() => {
         const verifyEmail = async () => {
             try {
-                const response = await fetch(`http://localhost:5001/verify/${token}`);
+                const response = await fetch(`https://ufresearcherbackend.onrender.com/verify/${token}`);
                 const data = await response.json();
                 if (!response.ok) {
                     throw new Error(data.message || 'Error verifying email');

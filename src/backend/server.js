@@ -15,7 +15,7 @@ const apiSecret = process.env.API_SECRET;
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://ufresearcher.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -139,7 +139,7 @@ app.post("/register", async (req, res) => {
         const newUser = new User({ username, password: hashPass, verificationToken });
         await newUser.save();
 
-        const verificationLink = `http://localhost:5001/verify?token=${verificationToken}`;
+        const verificationLink = `https://ufresearcher.onrender.com/verify?token=${verificationToken}`;
         await transporter.sendMail({
             from: 'ResearchGator <gatorresearchtest@gmail.com>',
             to: username,

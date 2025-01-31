@@ -162,7 +162,7 @@ const Dashboard = () => {
         setFadeIn(false);
 
         try {
-            const response = await fetch('http://localhost:5001/search', {
+            const response = await fetch('https://ufresearcherbackend.onrender.com/search', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -219,7 +219,7 @@ const Dashboard = () => {
             let foundResults = false;
             const maxPage = 30
             while (!foundResults && page <= maxPage) {
-                const response = await fetch('http://localhost:5001/search', {
+                const response = await fetch('https://ufresearcherbackend.onrender.com/search', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -276,7 +276,7 @@ const Dashboard = () => {
                 alert("Please login to save articles");
                 return;
             }
-            const response = await fetch('http://localhost:5001/save-article', {
+            const response = await fetch('https://ufresearcherbackend.onrender.com/save-article', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
